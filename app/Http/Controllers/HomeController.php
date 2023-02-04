@@ -16,7 +16,11 @@ class HomeController extends Controller
 
     public function detail_kegiatan(Kegiatan $kegiatan) {
         $kegiatan = Kegiatan::with('image')->findOrFail($kegiatan->id);
-        dd($kegiatan);
         return view('frontend.activity', compact('kegiatan'));
+    }
+
+    public function detail_wisata(Wisata $wisata) {
+        $wisata = Wisata::with('image', 'tiket')->findOrFail($wisata->id);
+        return view('frontend.destination', compact('wisata'));
     }
 }

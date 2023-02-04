@@ -35,6 +35,7 @@
                                     <th>#</th>
                                     <th>Judul Kegiatan</th>
                                     <th>Foto Kegiatan</th>
+                                    <th>Tempat Kegiatan</th>
                                     <th>Deskripsi Kegiatan</th>
                                     <th>Action</th>
                                 </tr>
@@ -50,6 +51,7 @@
                                         <td>
                                             <a href="{{ asset('storage/' . $kegiatan->image->first()->gambar) }}" class="image-popup-no-margins"><img src="{{ asset('storage/' . $kegiatan->image->first()->gambar) }}" style="height: 10em" alt="Gambar Kegiatan"></a>
                                         </td>
+                                        <td>{{ $kegiatan->tempat_kegiatan }}</td>
                                         <td>{!! Str::of($kegiatan->deskripsi_kegiatan)->limit(100) !!}</td>
                                         <td>
                                             <a href="{{ route('admin.kegiatan.show', $kegiatan->id) }}" class="btn btn-primary sm" title="Show Data"><i class="fas fa-eye"></i></a>

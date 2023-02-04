@@ -25,6 +25,7 @@ class KegiatanController extends Controller
     public function store(Request $request) {
         $validated = $request->validate([
             'judul_kegiatan' => 'required',
+            'tempat_kegiatan' => 'required',
             'deskripsi_kegiatan' => 'required',
             'gambar_kegiatan' => 'required|file|image|max:5120',
         ]);
@@ -52,9 +53,10 @@ class KegiatanController extends Controller
     public function update(Request $request, Kegiatan $kegiatan) {
         $validated = $request->validate([
             'judul_kegiatan' => 'required',
+            'tempat_kegiatan' => 'required',
             'deskripsi_kegiatan' => 'required',
         ]);
-        
+
         $validated['slug_kegiatan'] = Str::slug($request->judul_kegiatan);
         $kegiatan->update($validated);
 

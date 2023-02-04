@@ -45,6 +45,17 @@
                     <!-- end row -->
 
                     <div class="row mb-3">
+                        <label for="tempat_kegiatan" class="col-sm-2 col-form-label">Tenoat Kegiatan</label>
+                        <div class="col-sm-10">
+                            <input name="tempat_kegiatan" class="form-control" type="text" value="{{ $kegiatan->tempat_kegiatan }}" id="tempat_kegiatan">
+                            @error('tempat_kegiatan')
+                                <span class="text-danger"> {{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row mb-3">
                         <label for="deskripsi_kegiatan" class="col-sm-2 col-form-label">Deskripsi Kegiatan</label>
                         <div class="col-sm-10">
                             <textarea name="deskripsi_kegiatan" id="elm1" cols="30" rows="10">{{ $kegiatan->deskripsi_kegiatan }}</textarea>

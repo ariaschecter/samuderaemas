@@ -17,12 +17,12 @@
             <nav id="navbar" class="overlay">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <div class="overlay-content">
-                    <a class="active" href="{{ url('/') }}">Beranda</a>
-                    <a href="#article-activity">Kegiatan</a>
-                    <a href="#article-destination">Wisata</a>
-                    <a href="#article-bussiness">Usaha</a>
-                    <a href="">Lokasi</a>
-                    <a href="staff.html">Staff</a>
+                    <a  href="{{ url('/') }}">Beranda</a>
+                        <a href="{{ url('/#article-activity') }}">Kegiatan</a>
+                        <a class="active" href="{{ url('/#article-destination') }}">Wisata</a>
+                        <a href="{{ url('/#article-bussiness') }}">Usaha</a>
+                        <a href="">Lokasi</a>
+                        <a href="{{ url('staff') }}">Staff</a>
                 </div>
             </nav>
             @include('template.menu')
