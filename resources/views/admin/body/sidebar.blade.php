@@ -29,11 +29,35 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('admin.kegiatan.index') }}" class="waves-effect">
+                        <i class="ri-article-line"></i>
+                        <span>Kegiatan</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('admin.wisata.index') }}" class="waves-effect">
+                        <i class="ri-map-2-line"></i>
+                        <span>Wisata</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('admin.dashboard') }}" class="waves-effect">
+                        <i class="ri-group-line"></i>
+                        <span>Staff</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('admin.dashboard') }}" class="waves-effect">
+                        <i class="ri-funds-box-line"></i>
+                        <span>Finance</span>
+                    </a>
+                </li>
 
                 <li class="menu-title">Admin</li>
 
                 <li>
-                    <a href="#" class="waves-effect">
+                    <a href="{{ route('admin.user.index') }}" class="waves-effect">
                         <i class="ri-group-line"></i>
                         <span>User</span>
                     </a>

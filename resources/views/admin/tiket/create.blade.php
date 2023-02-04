@@ -9,13 +9,13 @@
     <div class="row">
         <div class="col-12">
             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                <h4 class="mb-sm-0">Add User</h4>
+                <h4 class="mb-sm-0">Tambah Tiket Wisata</h4>
 
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
                         <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('admin.user.index') }}">User</a></li>
-                        <li class="breadcrumb-item active">Add</li>
+                        <li class="breadcrumb-item"><a href="{{ route('admin.wisata.show', $wisata->id) }}">{{ $wisata->judul_wisata }}</a></li>
+                        <li class="breadcrumb-item active">Tambah</li>
                     </ol>
                 </div>
             </div>
@@ -28,16 +28,19 @@
           <div class="card">
               <div class="card-body">
 
-                <h4 class="card-title">Add User </h4>
+                <h4 class="card-title">Tambah Tiket Wisata </h4>
 
-                <form method="post" action="{{ route('admin.user.store') }}" enctype="multipart/form-data">
+                <form method="post" action="{{ route('admin.tiket.store') }}" enctype="multipart/form-data">
                     @csrf
 
+                    <input type="hidden" name="wisata_id" value="{{ $wisata->id }}">
+
                     <div class="row mb-3">
-                        <label for="name" class="col-sm-2 col-form-label">User Name</label>
+                        <label for="hari_tiket" class="col-sm-2 col-form-label">Hari Tiket</label>
                         <div class="col-sm-10">
-                            <input name="name" class="form-control" type="text" value="{{ old('name') }}" id="name">
-                            @error('name')
+                            <input name="hari_tiket" class="form-control" type="text" value="{{ old('hari_tiket') }}" id="hari_tiket">
+                            <div class="text-muted">Ex : Senin - Jumat</div>
+                            @error('hari_tiket')
                                 <span class="text-danger"> {{ $message }}</span>
                             @enderror
                         </div>
@@ -45,10 +48,10 @@
                     <!-- end row -->
 
                     <div class="row mb-3">
-                        <label for="email" class="col-sm-2 col-form-label">Email</label>
+                        <label for="orang_tiket" class="col-sm-2 col-form-label">Tiket Orang</label>
                         <div class="col-sm-10">
-                            <input name="email" class="form-control" type="email" value="{{ old('email') }}" id="email">
-                            @error('email')
+                            <input name="orang_tiket" class="form-control" type="number" value="{{ old('orang_tiket') }}" id="orang_tiket">
+                            @error('orang_tiket')
                                 <span class="text-danger"> {{ $message }}</span>
                             @enderror
                         </div>
@@ -56,10 +59,10 @@
                     <!-- end row -->
 
                     <div class="row mb-3">
-                        <label for="password" class="col-sm-2 col-form-label">Password</label>
+                        <label for="motor_tiket" class="col-sm-2 col-form-label">Tiket Motor</label>
                         <div class="col-sm-10">
-                            <input name="password" class="form-control" type="password" id="password">
-                            @error('password')
+                            <input name="motor_tiket" class="form-control" type="number" value="{{ old('motor_tiket') }}" id="motor_tiket">
+                            @error('motor_tiket')
                                 <span class="text-danger"> {{ $message }}</span>
                             @enderror
                         </div>
@@ -67,21 +70,17 @@
                     <!-- end row -->
 
                     <div class="row mb-3">
-                        <label for="confirm_password" class="col-sm-2 col-form-label">Confirmation Password</label>
+                        <label for="mobil_tiket" class="col-sm-2 col-form-label">Tiket Mobil</label>
                         <div class="col-sm-10">
-                            <input name="confirm_password" class="form-control" type="password" id="confirm_password">
-                            @error('confirm_password')
+                            <input name="mobil_tiket" class="form-control" type="number" value="{{ old('mobil_tiket') }}" id="mobil_tiket">
+                            @error('mobil_tiket')
                                 <span class="text-danger"> {{ $message }}</span>
                             @enderror
                         </div>
                     </div>
                     <!-- end row -->
 
-
-
-
-                  <!-- end row -->
-                    <input type="submit" class="btn btn-info waves-effect waves-light" value="Insert User Data">
+                    <input type="submit" class="btn btn-info waves-effect waves-light" value="Insert Tiket Data">
                   </form>
 
               </div>

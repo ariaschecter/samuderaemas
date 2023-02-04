@@ -9,13 +9,13 @@
     <div class="row">
         <div class="col-12">
             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                <h4 class="mb-sm-0">Add User</h4>
+                <h4 class="mb-sm-0">Edit Wisata</h4>
 
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
                         <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('admin.user.index') }}">User</a></li>
-                        <li class="breadcrumb-item active">Add</li>
+                        <li class="breadcrumb-item"><a href="{{ route('admin.wisata.index') }}">Wisata</a></li>
+                        <li class="breadcrumb-item active">Edit</li>
                     </ol>
                 </div>
             </div>
@@ -28,16 +28,16 @@
           <div class="card">
               <div class="card-body">
 
-                <h4 class="card-title">Add User </h4>
+                <h4 class="card-title">Edit Wisata </h4>
 
-                <form method="post" action="{{ route('admin.user.store') }}" enctype="multipart/form-data">
+                <form method="post" action="{{ route('admin.wisata.update', $wisata->id) }}" enctype="multipart/form-data">
                     @csrf
 
                     <div class="row mb-3">
-                        <label for="name" class="col-sm-2 col-form-label">User Name</label>
+                        <label for="judul_wisata" class="col-sm-2 col-form-label">Judul Wisata</label>
                         <div class="col-sm-10">
-                            <input name="name" class="form-control" type="text" value="{{ old('name') }}" id="name">
-                            @error('name')
+                            <input name="judul_wisata" class="form-control" type="text" value="{{ $wisata->judul_wisata }}" id="judul_wisata">
+                            @error('judul_wisata')
                                 <span class="text-danger"> {{ $message }}</span>
                             @enderror
                         </div>
@@ -45,10 +45,10 @@
                     <!-- end row -->
 
                     <div class="row mb-3">
-                        <label for="email" class="col-sm-2 col-form-label">Email</label>
+                        <label for="lokasi_wisata" class="col-sm-2 col-form-label">Lokasi Wisata</label>
                         <div class="col-sm-10">
-                            <input name="email" class="form-control" type="email" value="{{ old('email') }}" id="email">
-                            @error('email')
+                            <input name="lokasi_wisata" class="form-control" type="text" value="{{ $wisata->lokasi_wisata }}" id="lokasi_wisata">
+                            @error('lokasi_wisata')
                                 <span class="text-danger"> {{ $message }}</span>
                             @enderror
                         </div>
@@ -56,10 +56,10 @@
                     <!-- end row -->
 
                     <div class="row mb-3">
-                        <label for="password" class="col-sm-2 col-form-label">Password</label>
+                        <label for="link_lokasi_wisata" class="col-sm-2 col-form-label">Link Lokasi Wisata</label>
                         <div class="col-sm-10">
-                            <input name="password" class="form-control" type="password" id="password">
-                            @error('password')
+                            <input name="link_lokasi_wisata" class="form-control" type="text" value="{{ $wisata->link_lokasi_wisata }}" id="link_lokasi_wisata">
+                            @error('link_lokasi_wisata')
                                 <span class="text-danger"> {{ $message }}</span>
                             @enderror
                         </div>
@@ -67,21 +67,17 @@
                     <!-- end row -->
 
                     <div class="row mb-3">
-                        <label for="confirm_password" class="col-sm-2 col-form-label">Confirmation Password</label>
+                        <label for="deskripsi_wisata" class="col-sm-2 col-form-label">Deskripsi Wisata</label>
                         <div class="col-sm-10">
-                            <input name="confirm_password" class="form-control" type="password" id="confirm_password">
-                            @error('confirm_password')
+                            <textarea name="deskripsi_wisata" id="elm1" cols="30" rows="10">{{ $wisata->deskripsi_wisata }}</textarea>
+                            @error('deskripsi_wisata')
                                 <span class="text-danger"> {{ $message }}</span>
                             @enderror
                         </div>
                     </div>
                     <!-- end row -->
 
-
-
-
-                  <!-- end row -->
-                    <input type="submit" class="btn btn-info waves-effect waves-light" value="Insert User Data">
+                    <input type="submit" class="btn btn-info waves-effect waves-light" value="Update Wisata Data">
                   </form>
 
               </div>

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('tikets', function (Blueprint $table) {
             $table->id();
-            $table->forignId('wisata_id');
+            $table->foreignId('wisata_id');
             $table->string('hari_tiket');
             $table->string('orang_tiket');
             $table->string('motor_tiket');

@@ -20,7 +20,7 @@
         </div>
         <!-- end page title -->
 
-        <a href="{{ route('home.user.add') }}" class="btn btn-primary mb-2">Add User</a>
+        <a href="{{ route('admin.user.add') }}" class="btn btn-primary mb-2">Add User</a>
 
         <div class="row">
             <div class="col-12">
@@ -48,7 +48,7 @@
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>
-                                            <a href="{{ route('home.user.delete', $user->id) }}" class="btn btn-danger sm" title="Delete Data" id="delete"><i class="fas fa-trash-alt"></i></a>
+                                            <a href="{{ route('admin.user.delete', $user->id) }}" class="btn btn-danger sm" title="Delete Data" id="delete"><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach

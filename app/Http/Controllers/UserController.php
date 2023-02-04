@@ -38,7 +38,7 @@ class UserController extends Controller
             'alert-type' => 'success',
         ];
 
-        return redirect()->route('home.user.index')->with($notification);
+        return redirect()->route('admin.user.index')->with($notification);
     }
 
 

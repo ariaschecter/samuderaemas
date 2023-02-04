@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('kegiatan_id')->nullable();
             $table->foreignId('wisata_id')->nullable();
-            $table->string('gambar_image');
+            $table->string('gambar');
             $table->timestamps();
         });
     }

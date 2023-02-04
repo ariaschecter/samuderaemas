@@ -9,13 +9,13 @@
     <div class="row">
         <div class="col-12">
             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                <h4 class="mb-sm-0">Add User</h4>
+                <h4 class="mb-sm-0">Tambah Kegiatan</h4>
 
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
                         <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('admin.user.index') }}">User</a></li>
-                        <li class="breadcrumb-item active">Add</li>
+                        <li class="breadcrumb-item"><a href="{{ route('admin.kegiatan.index') }}">Kegiatan</a></li>
+                        <li class="breadcrumb-item active">Tambah</li>
                     </ol>
                 </div>
             </div>
@@ -28,16 +28,16 @@
           <div class="card">
               <div class="card-body">
 
-                <h4 class="card-title">Add User </h4>
+                <h4 class="card-title">Tambah Kegiatan </h4>
 
-                <form method="post" action="{{ route('admin.user.store') }}" enctype="multipart/form-data">
+                <form method="post" action="{{ route('admin.kegiatan.store') }}" enctype="multipart/form-data">
                     @csrf
 
                     <div class="row mb-3">
-                        <label for="name" class="col-sm-2 col-form-label">User Name</label>
+                        <label for="judul_kegiatan" class="col-sm-2 col-form-label">Judul Kegiatan</label>
                         <div class="col-sm-10">
-                            <input name="name" class="form-control" type="text" value="{{ old('name') }}" id="name">
-                            @error('name')
+                            <input name="judul_kegiatan" class="form-control" type="text" value="{{ old('judul_kegiatan') }}" id="judul_kegiatan">
+                            @error('judul_kegiatan')
                                 <span class="text-danger"> {{ $message }}</span>
                             @enderror
                         </div>
@@ -45,10 +45,10 @@
                     <!-- end row -->
 
                     <div class="row mb-3">
-                        <label for="email" class="col-sm-2 col-form-label">Email</label>
+                        <label for="deskripsi_kegiatan" class="col-sm-2 col-form-label">Deskripsi Kegiatan</label>
                         <div class="col-sm-10">
-                            <input name="email" class="form-control" type="email" value="{{ old('email') }}" id="email">
-                            @error('email')
+                            <textarea name="deskripsi_kegiatan" id="elm1" cols="30" rows="10">{{ old('deskripsi_kegiatan') }}</textarea>
+                            @error('deskripsi_kegiatan')
                                 <span class="text-danger"> {{ $message }}</span>
                             @enderror
                         </div>
@@ -56,32 +56,24 @@
                     <!-- end row -->
 
                     <div class="row mb-3">
-                        <label for="password" class="col-sm-2 col-form-label">Password</label>
+                        <label for="gambar_kegiatan" class="col-sm-2 col-form-label">Gambar Kegiatan </label>
                         <div class="col-sm-10">
-                            <input name="password" class="form-control" type="password" id="password">
-                            @error('password')
-                                <span class="text-danger"> {{ $message }}</span>
-                            @enderror
+                            <input name="gambar_kegiatan" class="form-control" type="file"  id="image">
+                                @error('gambar_kegiatan') <span class="text-danger"> {{ $message }}</span> @enderror
                         </div>
                     </div>
                     <!-- end row -->
 
                     <div class="row mb-3">
-                        <label for="confirm_password" class="col-sm-2 col-form-label">Confirmation Password</label>
+                        <label for="example-text-input" class="col-sm-2 col-form-label">  </label>
                         <div class="col-sm-10">
-                            <input name="confirm_password" class="form-control" type="password" id="confirm_password">
-                            @error('confirm_password')
-                                <span class="text-danger"> {{ $message }}</span>
-                            @enderror
+                            <img id="showImage" class="img-fluid img-thumbnail" src="{{ asset('backend/assets/images/no-image.jpg') }}" alt="Image Show">
                         </div>
                     </div>
                     <!-- end row -->
 
 
-
-
-                  <!-- end row -->
-                    <input type="submit" class="btn btn-info waves-effect waves-light" value="Insert User Data">
+                    <input type="submit" class="btn btn-info waves-effect waves-light" value="Insert Kegiatan Data">
                   </form>
 
               </div>
