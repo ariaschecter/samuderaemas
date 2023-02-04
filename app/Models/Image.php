@@ -17,4 +17,8 @@ class Image extends Model
     public function wisata() {
         return $this->belongsTo(Wisata::class, 'wisata_id', 'id');
     }
+
+    public function usaha() {
+        return $this->belongsTo(Usaha::class, 'usaha_id', 'id');
+    }
 }

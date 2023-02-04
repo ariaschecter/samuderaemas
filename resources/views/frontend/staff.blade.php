@@ -21,7 +21,7 @@
                         <a href="{{ url('/#article-activity') }}">Kegiatan</a>
                         <a href="{{ url('/#article-destination') }}">Wisata</a>
                         <a href="{{ url('/#article-bussiness') }}">Usaha</a>
-                        <a href="">Lokasi</a>
+                        @include('template.lokasi_bumdes')
                         <a class="active" href="{{ url('/staff') }}">Staff</a>
                     </div>
                 </nav>

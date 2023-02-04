@@ -6,6 +6,7 @@ use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\TiketController;
+use App\Http\Controllers\UsahaController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WisataController;
 use Illuminate\Support\Facades\Route;
@@ -43,6 +44,16 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('/kegiatan/delete/{kegiatan}', 'destroy')->name('admin.kegiatan.delete');
     });
 
+    Route::controller(UsahaController::class)->group(function () {
+        Route::get('/usaha', 'index')->name('admin.usaha.index');
+        Route::get('/usaha/add', 'create')->name('admin.usaha.add');
+        Route::post('/usaha/add', 'store')->name('admin.usaha.store');
+        Route::get('/usaha/show/{usaha}', 'show')->name('admin.usaha.show');
+        Route::get('/usaha/edit/{usaha}', 'edit')->name('admin.usaha.edit');
+        Route::post('/usaha/edit/{usaha}', 'update')->name('admin.usaha.update');
+        Route::get('/usaha/delete/{usaha}', 'destroy')->name('admin.usaha.delete');
+    });
+
     Route::controller(WisataController::class)->group(function () {
         Route::get('/wisata', 'index')->name('admin.wisata.index');
         Route::get('/wisata/add', 'create')->name('admin.wisata.add');
@@ -66,6 +77,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::controller(ImageController::class)->group(function () {
         Route::get('/gambar/add/kegiatan/{kegiatan}', 'create_kegiatan')->name('admin.gambar.add.kegiatan');
         Route::get('/gambar/add/wisata/{wisata}', 'create_wisata')->name('admin.gambar.add.wisata');
+        Route::get('/gambar/add/usaha/{usaha}', 'create_usaha')->name('admin.gambar.add.usaha');
         Route::post('/gambar/add', 'store')->name('admin.gambar.store');
         Route::get('/gambar/edit/{gambar}', 'edit')->name('admin.gambar.edit');
         Route::post('/gambar/edit/{gambar}', 'update')->name('admin.gambar.update');

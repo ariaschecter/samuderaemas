@@ -42,6 +42,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{ route('admin.usaha.index') }}" class="waves-effect">
+                        <i class="ri-vip-diamond-line"></i>
+                        <span>Usaha</span>
+                    </a>
+                </li>
+                <li>
                     <a href="{{ route('admin.staff.index') }}" class="waves-effect">
                         <i class="ri-group-line"></i>
                         <span>Staff</span>

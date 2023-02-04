@@ -9,19 +9,13 @@
     <div class="row">
         <div class="col-12">
             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                <h4 class="mb-sm-0">Edit Gambar</h4>
+                <h4 class="mb-sm-0">Tambah Gambar</h4>
 
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
                         <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                        @if ($gambar->kegiatan_id)
-                        <li class="breadcrumb-item"><a href="{{ route('admin.kegiatan.show', $gambar->kegiatan_id) }}">{{ $gambar->kegiatan->judul_kegiatan }}</a></li>
-                        @elseif($gambar->wisata_id)
-                        <li class="breadcrumb-item"><a href="{{ route('admin.wisata.show', $gambar->wisata_id) }}">{{ $gambar->wisata->judul_wisata }}</a></li>
-                        @elseif($gambar->usaha_id)
-                        <li class="breadcrumb-item"><a href="{{ route('admin.usaha.show', $gambar->usaha_id) }}">{{ $gambar->usaha->nama_usaha }}</a></li>
-                        @endif
-                        <li class="breadcrumb-item active">Edit</li>
+                        <li class="breadcrumb-item"><a href="{{ route('admin.usaha.index') }}">Gambar</a></li>
+                        <li class="breadcrumb-item active">Tambah</li>
                     </ol>
                 </div>
             </div>
@@ -34,13 +28,15 @@
           <div class="card">
               <div class="card-body">
 
-                <h4 class="card-title">Edit Gambar </h4>
+                <h4 class="card-title">Tambah Gambar </h4>
 
-                <form method="post" action="{{ route('admin.gambar.update', $gambar->id) }}" enctype="multipart/form-data">
+                <form method="post" action="{{ route('admin.gambar.store') }}" enctype="multipart/form-data">
                     @csrf
 
+                    <input type="hidden" value="{{ $usaha->id }}" name="usaha_id">
+
                     <div class="row mb-3">
-                        <label for="gambar" class="col-sm-2 col-form-label">Gambar Kegiatan </label>
+                        <label for="gambar" class="col-sm-2 col-form-label">Gambar Usaha </label>
                         <div class="col-sm-10">
                             <input name="gambar" class="form-control" type="file"  id="image">
                                 @error('gambar') <span class="text-danger"> {{ $message }}</span> @enderror
@@ -51,13 +47,13 @@
                     <div class="row mb-3">
                         <label for="example-text-input" class="col-sm-2 col-form-label">  </label>
                         <div class="col-sm-10">
-                            <img id="showImage" class="img-fluid img-thumbnail" src="{{ asset('storage/' . $gambar->gambar) }}" alt="Image Show">
+                            <img id="showImage" class="img-fluid img-thumbnail" src="{{ asset('backend/assets/images/no-image.jpg') }}" alt="Image Show">
                         </div>
                     </div>
                     <!-- end row -->
 
 
-                    <input type="submit" class="btn btn-info waves-effect waves-light" value="Update Gambar Data">
+                    <input type="submit" class="btn btn-info waves-effect waves-light" value="Insert Gambar Data">
                   </form>
 
               </div>

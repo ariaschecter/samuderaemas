@@ -17,11 +17,11 @@
             <nav id="navbar" class="overlay">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <div class="overlay-content">
-                    <a  href="{{ url('/') }}">Beranda</a>
+                        <a class="active" href="{{ url('/') }}">Beranda</a>
                         <a href="{{ url('/#article-activity') }}">Kegiatan</a>
-                        <a class="active" href="{{ url('/#article-destination') }}">Wisata</a>
+                        <a href="{{ url('/#article-destination') }}">Wisata</a>
                         <a href="{{ url('/#article-bussiness') }}">Usaha</a>
-                        <a href="">Lokasi</a>
+                        @include('template.lokasi_bumdes')
                         <a href="{{ url('staff') }}">Staff</a>
                 </div>
             </nav>
@@ -111,78 +111,36 @@
         <article id="article-bussiness">
             <p class="tagline-our-activity">Usaha Kami</p>
             <div class="our-bussiness">
+                @foreach ($usahas as $usaha)
                 <section>
                     <div class="grid-container">
                         <div class="focal-bussiness">
-                            <img src="{{ asset('frontend/images/image-content/bussiness/focal-bibit_lele.png') }}" alt="">
+                            <img src="{{ asset('storage/' . $usaha->image->first()->gambar) }}" alt="">
                         </div>
+                        @foreach ($usaha->image->skip(1)->take(4) as $gambar)
                         <div class="item-bussiness">
-                            <img src="{{ asset('frontend/images/image-content/bussiness/item-bussiness-1.png') }}" alt="">
+                            <img src="{{ asset('storage/' . $gambar->gambar) }}" alt="">
                         </div>
-                        <div class="item-bussiness">
-                            <img src="{{ asset('frontend/images/image-content/bussiness/item-bussiness-2.png') }}" alt="">
-                        </div>
-                        <div class="item-bussiness">
-                            <img src="{{ asset('frontend/images/image-content/bussiness/item-bussiness-3.png') }}" alt="">
-                        </div>
-                        <div class="item-bussiness">
-                            <img src="{{ asset('frontend/images/image-content/bussiness/item-bussiness-4.png') }}" alt="">
-                        </div>
+                        @endforeach
                     </div>
                     <div class="text-bussiness">
                         <div class="bussiness-name">
-                            <p>Bibit Lele</p>
+                            <p>{{ $usaha->nama_usaha }}</p>
                         </div>
                         <img src="{{ asset('frontend/images/image-content/destination/line.png') }}" alt="">
                         <div class="bussiness-description">
                             <div class="about-bussiness">
-                                <p>Desa Tumpak Rejo memiliki usaha dalam pembibitan lele dengan cara pemijahan antara lele betina dengan lele jantan. Setelah dilakukan pemijahan lele betina akan bertelur dan netas sekitar 3 hari. Lele yang baru menetas kemudian akan dibiarkan selama satu minggu untuk dilakukan grading sesuai ukuran masing-masing. Ukuran lelepun juga beragam mulai dari larva, 1, 2 dan 3.</p>
-                                <p>Lele yang udah memasuki ukuran 3 adalah lele yang siap untuk dijual kepada costumer atau para pelaku pembesar lele dengan harga perekor dan tidak memiliki minimal pembelian.</p>
+                                {!! $usaha->deskripsi_usaha !!}
                             </div>
-                            <p class="focus-description">Harga : Rp.100 / Ekor bibit lele ukuran 3</p>
+                            <p class="focus-description">Harga : Rp. {{ number_format($usaha->harga_usaha) }} / {{ $usaha->satuan_usaha }}</p>
                             <div class="contact-bussiness">
-                                <p class="focus-description">Hubungi Kami :<a href="">+6183150993913</a></p>
-                                <p class="focus-description">Lokasi : Jl Ini Contoh No.3 Rt.4 Desa Tumpakrejo</p>
+                                <p class="focus-description">Hubungi Kami :<a href="tel:{{ $usaha->cp_usaha }}">+{{ $usaha->cp_usaha }}</a></p>
+                                <p class="focus-description">Lokasi : {{ $usaha->lokasi_usaha }}</p>
                             </div>
                         </div>
                     </div>
                 </section>
-                <section>
-                    <div class="grid-container">
-                        <div class="focal-bussiness">
-                            <img src="{{ asset('frontend/images/image-content/bussiness/focal-bibit_lele.png') }}" alt="">
-                        </div>
-                        <div class="item-bussiness">
-                            <img src="{{ asset('frontend/images/image-content/bussiness/item-bussiness-1.png') }}" alt="">
-                        </div>
-                        <div class="item-bussiness">
-                            <img src="{{ asset('frontend/images/image-content/bussiness/item-bussiness-2.png') }}" alt="">
-                        </div>
-                        <div class="item-bussiness">
-                            <img src="{{ asset('frontend/images/image-content/bussiness/item-bussiness-3.png') }}" alt="">
-                        </div>
-                        <div class="item-bussiness">
-                            <img src="{{ asset('frontend/images/image-content/bussiness/item-bussiness-4.png') }}" alt="">
-                        </div>
-                    </div>
-                    <div class="text-bussiness">
-                        <div class="bussiness-name">
-                            <p>Bibit Lele</p>
-                        </div>
-                        <img src="{{ asset('frontend/images/image-content/destination/line.png') }}" alt="">
-                        <div class="bussiness-description">
-                            <div class="about-bussiness">
-                                <p>Desa Tumpak Rejo memiliki usaha dalam pembibitan lele dengan cara pemijahan antara lele betina dengan lele jantan. Setelah dilakukan pemijahan lele betina akan bertelur dan netas sekitar 3 hari. Lele yang baru menetas kemudian akan dibiarkan selama satu minggu untuk dilakukan grading sesuai ukuran masing-masing. Ukuran lelepun juga beragam mulai dari larva, 1, 2 dan 3.</p>
-                                <p>Lele yang udah memasuki ukuran 3 adalah lele yang siap untuk dijual kepada costumer atau para pelaku pembesar lele dengan harga perekor dan tidak memiliki minimal pembelian.</p>
-                            </div>
-                            <p class="focus-description">Harga : Rp.100 / Ekor bibit lele ukuran 3</p>
-                            <div class="contact-bussiness">
-                                <p class="focus-description">Hubungi Kami :<a href="">+6183150993913</a></p>
-                                <p class="focus-description">Lokasi : Jl Ini Contoh No.3 Rt.4 Desa Tumpakrejo</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                @endforeach
             </div>
         </article>
     </main>
@@ -194,10 +152,10 @@
             </div>
             <div class="footer-nav">
                     <a class="active" href="">Beranda</a>
-                    <a href="">Kegiatan</a>
-                    <a href="">Staff</a>
-                    <a href="">Wisata</a>
-                    <a href="">Usaha</a>
+                    <a href="{{ url('/#article-activity') }}">Kegiatan</a>
+                    <a href="{{ url('staff') }}">Staff</a>
+                    <a href="{{ url('/#article-destination') }}">Wisata</a>
+                    <a href="{{ url('/#article-bussiness') }}">Usaha</a>
             </div>
             <div class="footer-our-contact">
                 <p>Kontak Kami</p>
