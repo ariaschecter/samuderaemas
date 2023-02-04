@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class WisataController extends Controller
 {
     public function index() {
-        $wisatas = Wisata::all();
+        $wisatas = Wisata::with('image')->get();
         return view('admin.wisata.index', compact('wisatas'));
     }
 
@@ -18,6 +18,7 @@ class WisataController extends Controller
     }
 
     public function show(Wisata $wisata) {
+        $wisata = Wisata::with('image', 'tiket')->findOrFail($wisata->id);
         return view('admin.wisata.show', compact('wisata'));
     }
 
@@ -33,7 +34,7 @@ class WisataController extends Controller
         $image = $request->file('gambar_wisata')->store('image/wisata');
 
         $wisata = Wisata::create($validated);
-        
+
         Image::create([
             'wisata_id' => $wisata->id,
             'gambar' => $image,

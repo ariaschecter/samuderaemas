@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class KegiatanController extends Controller
 {
     public function index() {
-        $kegiatans = Kegiatan::all();
+        $kegiatans = Kegiatan::with('image')->get();
         return view('admin.kegiatan.index', compact('kegiatans'));
     }
 
