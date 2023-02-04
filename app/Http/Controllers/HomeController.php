@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kegiatan;
+use App\Models\Staff;
 use App\Models\Wisata;
 use Illuminate\Http\Request;
 
@@ -22,5 +23,10 @@ class HomeController extends Controller
     public function detail_wisata(Wisata $wisata) {
         $wisata = Wisata::with('image', 'tiket')->findOrFail($wisata->id);
         return view('frontend.destination', compact('wisata'));
+    }
+
+    public function staff() {
+        $staffs = Staff::all();
+        return view('frontend.staff', compact('staffs'));
     }
 }

@@ -25,6 +25,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index');
     Route::get('/kegiatan/{kegiatan:slug_kegiatan}', 'detail_kegiatan')->name('home.kegiatan.detail');
     Route::get('/wisata/{wisata:slug_wisata}', 'detail_wisata')->name('home.wisata.detail');
+    Route::get('/staff', 'staff');
 });
 
 Route::get('/dashboard', function () {
