@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Image;
 use App\Models\Wisata;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class WisataController extends Controller
 {
@@ -33,6 +34,7 @@ class WisataController extends Controller
 
         $image = $request->file('gambar_wisata')->store('image/wisata');
 
+        $validated['slug_wisata'] = Str::slug($request->judul_wisata);
         $wisata = Wisata::create($validated);
 
         Image::create([
@@ -58,7 +60,7 @@ class WisataController extends Controller
             'link_lokasi_wisata' => 'required',
             'deskripsi_wisata' => 'required',
         ]);
-
+        $validated['slug_wisata'] = Str::slug($request->judul_wisata);
         $wisata->update($validated);
 
         $notification = [

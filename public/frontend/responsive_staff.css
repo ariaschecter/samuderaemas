@@ -1,0 +1,193 @@
+@media screen and (min-width: 701px) {
+    main{
+        display: flex;
+        margin-top: -171px;
+        justify-content: center;
+        padding: 0 100px;
+    }
+    .container{
+        width: 1239px;    
+        background: #FFFFFF;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.06);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        padding: 75px 105px;
+    } 
+    .content{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 40px;
+        width: 1028px;        
+    } 
+    .staff-content{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px;
+        gap: 44px;            
+    }
+    .right-down{
+        flex-direction: row-reverse;
+    }  
+    .image-staff{
+        width: 300px;
+        height: 400px;
+        background: linear-gradient(18.61deg, rgba(39, 123, 192, 0.4) 0%, rgba(39, 123, 192, 0.05) 97.76%);
+        backdrop-filter: blur(10px);  
+        display: flex;
+        justify-content: center;
+        overflow: hidden;       
+        border-radius: 20px;            
+    }
+    .image-staff img{        
+        width: 300px;
+    }
+    .description-staff{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 24px;
+        width: 600px;        
+    }
+    .description-staff img{
+        width: 600px;
+        border: 2px dashed #FFA800;
+    }
+    .tagline-staff{
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 28px;        
+        color: #2C2C2C;        
+    }
+    .name-job-staff{
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 19px;        
+        color: #2C2C2C;        
+    }
+    .job-staff{
+        font-weight: 400;
+    }
+    .about-staff{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 24px;                
+    }
+    .about-staff p{
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;        
+        color: #ABABAB;        
+    }
+
+}
+@media screen and (max-width: 700px) {    
+    main{
+        display: flex;
+        margin-top: -248px;
+        justify-content: center;
+        padding: 0 30px;
+        margin-bottom: 50px;
+    }
+    .container{
+        width: 300px; 
+        background: #FFFFFF;
+        background: #FFFFFF;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.06);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 50px;
+    }   
+    .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        gap: 40px;        
+        width: 280px;
+    } 
+    .staff-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        gap: 12px;
+                
+    }
+    .image-staff{
+        width: 150px;
+        height: 200px;
+        background: linear-gradient(18.61deg, rgba(39, 123, 192, 0.4) 0%, rgba(39, 123, 192, 0.05) 97.76%);
+        backdrop-filter: blur(5px);        
+        border-radius: 10px;    
+        display: flex;
+        justify-content: center;
+        overflow: hidden;         
+    }
+    .image-staff img{        
+        width: 150px;
+    }
+    .description-staff{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 12px;        
+    }
+    .description-staff img{
+        width: 280px;
+        border: 1px dashed #FFA800;
+    }
+    .tagline-staff{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 28px;
+        text-align: center;        
+        color: #2C2C2C;        
+    }
+    .name-job-staff{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        gap: 4px;        
+    }
+    .name-job-staff{
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 19px;        
+        color: #2C2C2C;        
+    }
+    .job-staff{
+        line-height: 16px;
+        font-size: 12px;
+        font-weight: 400;
+    }
+    .about-staff{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 8px;        
+    }
+    .about-staff p{
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;        
+        color: #ABABAB;        
+    }
+
+}

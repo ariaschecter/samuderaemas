@@ -42,7 +42,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('admin.dashboard') }}" class="waves-effect">
+                    <a href="{{ route('admin.staff.index') }}" class="waves-effect">
                         <i class="ri-group-line"></i>
                         <span>Staff</span>
                     </a>

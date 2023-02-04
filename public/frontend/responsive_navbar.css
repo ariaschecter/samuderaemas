@@ -1,0 +1,392 @@
+a{
+    font-family: 'Manrope';
+}
+p {
+    font-family: 'Manrope';
+    font-style: normal;
+    display: block;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+@media screen and (max-width: 700px) {
+    header{
+        background-image: url('http://127.0.0.1:8000/frontend/images/backgorund_mobile/glass_landing.png');
+        height: 800px;
+    }
+    .header{
+        padding: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .overlay {
+        height: 0%;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background: rgba(39, 123, 192, 0.6);
+        backdrop-filter: blur(10px);
+        transition: 0.5s;
+      }
+
+      .overlay-content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        gap: 40px;
+      }
+
+      .overlay a {
+        padding: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 28px;
+        color: #FFFFFF;
+        transition: 0.3s;
+      }
+
+    .overlay {overflow-y: auto;}
+    .overlay .closebtn {
+    font-size: 40px;
+    position:fixed;
+    top: 20px;
+    right: 10px;
+    }
+    .logo img{
+        height: 24px;
+    }
+    .menu{
+        height: 16px;
+    }
+    .tagline-header{
+        padding-left: 30px;
+    }
+    .tagline-header img{
+        margin-top: 3px;
+        width: 294px;
+    }
+    .text-tagline-header{
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 41px;
+        letter-spacing: 0.175em;
+        color: #FFFFFF;
+        padding: 0px;
+        width: 243px;
+        height: 82px;
+    }
+    .description-text-tagline-header{
+        width: 243px;
+        height: 84px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 28px;
+        color: #FFFFFF;
+    }
+    .information-header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 562px;
+        width: 100%;
+        padding: 24px 0px;
+        gap: 24px;
+    }
+    .information-header .activity{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        gap: 20px;
+
+        width: 220px;
+        height: max-content;
+    }
+
+    .information-header .activity .total-activity{
+        font-weight: 500;
+        font-size: 42px;
+        line-height: 28px;
+        color: #FFFFFF;
+    }
+    .information-header .activity .description-activity{
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+    .information-header .destination{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        gap: 20px;
+
+        width: 220px;
+        height: max-content;
+    }
+
+    .information-header .destination .total-destination{
+        font-weight: 500;
+        font-size: 42px;
+        line-height: 28px;
+        color: #FFFFFF;
+    }
+    .information-header .destination .description-destination{
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+    .information-header .bussiness-category{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        gap: 20px;
+
+        width: 220px;
+        height: max-content;
+    }
+
+    .information-header .bussiness-category .total-bussines-category{
+        font-weight: 500;
+        font-size: 42px;
+        line-height: 28px;
+        color: #FFFFFF;
+    }
+    .information-header .bussiness-category .description-bussines-category{
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+    .information-header .distance{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        gap: 20px;
+
+        width: 220px;
+        height: max-content;
+    }
+
+    .information-header .distance .total-distance{
+        font-weight: 500;
+        font-size: 42px;
+        line-height: 28px;
+        color: #FFFFFF;
+    }
+    .information-header .distance .description-distance{
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+
+
+}
+@media  screen and (min-width:701px ) {
+    header{
+        background-image:url('http://127.0.0.1:8000/frontend/images/background_desktop/glassbackground.png');
+        background-size:cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 781px;
+    }
+    .header{
+        padding-top: 25px;
+        padding-left: 100px;
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        align-items: center;
+    }
+    .overlay{
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+    }
+    .overlay-content{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px;
+        gap: 40px;
+    }
+    .overlay-content a{
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 28px;
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+    .overlay-content a.active{
+        color: #FFA800;
+    }
+    .menu{
+        z-index: -1;
+    }
+    .overlay .closebtn{
+        position: relative;
+        z-index: -1;
+    }
+    .content-header{
+        height: 712px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .tagline-header{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 15px;
+        margin-left: 100px;
+        color: #FFFFFF;
+        width: max-content;
+    }
+    .text-tagline-header{
+        width: 594px;
+        font-weight: 800;
+        font-size: 72px;
+        line-height: 98px;
+        letter-spacing: 0.175em;
+        color: #FFFFFF;
+    }
+    .tagline-header img{
+        width: 414px;
+    }
+    .description-text-tagline-header{
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        color: #FFFFFF;
+        width: 414px;
+    }
+    .information-header{
+        height: fit-content;
+        gap: 60px;
+        margin-right: 50px;
+        display: grid;
+        grid-template-columns: 220px 220px;
+    }
+    .information-header .activity{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0px;
+        gap: 5px;
+        width: 220px;
+        height: 203px;
+    }
+    .information-header .activity .total-activity{
+        font-weight: 500;
+        font-size: 72px;
+        line-height: 98px;
+        color: #FFFFFF;
+    }
+    .information-header .activity .description-activity{
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 25px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    .information-header .destination{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0px;
+        gap: 5px;
+        width: 220px;
+        height: 203px;
+    }
+    .information-header .destination .total-destination{
+        font-weight: 500;
+        font-size: 72px;
+        line-height: 98px;
+        color: #FFFFFF;
+    }
+    .information-header .destination .description-destination{
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 25px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    .information-header .bussiness-category{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0px;
+        gap: 5px;
+        width: 220px;
+        height: 203px;
+    }
+    .information-header .bussiness-category .total-bussines-category{
+        font-weight: 500;
+        font-size: 72px;
+        line-height: 98px;
+        color: #FFFFFF;
+    }
+    .information-header .bussiness-category .description-bussines-category{
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 25px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    .information-header .distance{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0px;
+        gap: 5px;
+        width: 220px;
+        height: 203px;
+    }
+    .information-header .distance .total-distance{
+        font-weight: 500;
+        font-size: 72px;
+        line-height: 98px;
+        color: #FFFFFF;
+    }
+    .information-header .distance .description-distance{
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 25px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+
+}

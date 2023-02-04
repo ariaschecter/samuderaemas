@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Image;
 use App\Models\Kegiatan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class KegiatanController extends Controller
 {
@@ -29,6 +30,7 @@ class KegiatanController extends Controller
         ]);
 
         $image = $request->file('gambar_kegiatan')->store('image/kegiatan');
+        $validated['slug_kegiatan'] = Str::slug($request->judul_kegiatan);
 
         $kegiatan = Kegiatan::create($validated);
         Image::create([
@@ -52,7 +54,8 @@ class KegiatanController extends Controller
             'judul_kegiatan' => 'required',
             'deskripsi_kegiatan' => 'required',
         ]);
-
+        
+        $validated['slug_kegiatan'] = Str::slug($request->judul_kegiatan);
         $kegiatan->update($validated);
 
         $notification = [

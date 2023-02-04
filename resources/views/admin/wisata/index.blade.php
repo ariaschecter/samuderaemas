@@ -52,9 +52,9 @@
                                         <td>
                                             <a href="{{ asset('storage/' . $wisata->image->first()->gambar) }}" class="image-popup-no-margins"><img src="{{ asset('storage/' . $wisata->image->first()->gambar) }}" style="height: 10em" alt="Gambar Wisata"></a>
                                         </td>
-                                        <td>{!! Str::of($wisata->deskripsi_wisata)->limit(144) !!}</td>
-                                        <td>{{ $wisata->lokasi_wisata }}</td>
-                                        <td>{{ $wisata->link_lokasi_wisata }}</td>
+                                        <td>{!! Str::of($wisata->deskripsi_wisata)->limit(30) !!}</td>
+                                        <td>{{ Str::of($wisata->lokasi_wisata)->limit(30) }}</td>
+                                        <td>{{ Str::of($wisata->link_lokasi_wisata)->limit(30) }}</td>
                                         <td>
                                             <a href="{{ route('admin.wisata.show', $wisata->id) }}" class="btn btn-primary sm" title="Show Data"><i class="fas fa-eye"></i></a>
                                             <a href="{{ route('admin.wisata.edit', $wisata->id) }}" class="btn btn-info sm" title="Edit Data"><i class="fas fa-edit"></i></a>

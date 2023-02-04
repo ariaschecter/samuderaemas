@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StaffController;
 use App\Http\Controllers\TiketController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WisataController;
@@ -19,8 +21,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/', 'index');
+    Route::get('/kegiatan/{kegiatan:slug_kegiatan}', 'detail_kegiatan')->name('home.kegiatan.detail');
+    Route::get('/wisata/{wisata:slug_wisata}', 'detail_wisata')->name('home.wisata.detail');
 });
 
 Route::get('/dashboard', function () {
@@ -46,6 +50,16 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('/wisata/edit/{wisata}', 'edit')->name('admin.wisata.edit');
         Route::post('/wisata/edit/{wisata}', 'update')->name('admin.wisata.update');
         Route::get('/wisata/delete/{wisata}', 'destroy')->name('admin.wisata.delete');
+    });
+
+    Route::controller(StaffController::class)->group(function () {
+        Route::get('/staff', 'index')->name('admin.staff.index');
+        Route::get('/staff/add', 'create')->name('admin.staff.add');
+        Route::post('/staff/add', 'store')->name('admin.staff.store');
+        Route::get('/staff/show/{staff}', 'show')->name('admin.staff.show');
+        Route::get('/staff/edit/{staff}', 'edit')->name('admin.staff.edit');
+        Route::post('/staff/edit/{staff}', 'update')->name('admin.staff.update');
+        Route::get('/staff/delete/{staff}', 'destroy')->name('admin.staff.delete');
     });
 
     Route::controller(ImageController::class)->group(function () {

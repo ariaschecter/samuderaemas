@@ -16,9 +16,10 @@ return new class extends Migration
         Schema::create('wisatas', function (Blueprint $table) {
             $table->id();
             $table->string('judul_wisata');
+            $table->string('slug_wisata');
             $table->text('deskripsi_wisata');
             $table->string('lokasi_wisata');
-            $table->string('link_lokasi_wisata');
+            $table->text('link_lokasi_wisata');
             $table->timestamps();
         });
     }
