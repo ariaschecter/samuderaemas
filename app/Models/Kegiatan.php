@@ -9,4 +9,8 @@ class Kegiatan extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+
+    public function image() {
+        return $this->hasMany(Image::class, 'kegiatan_id', 'id');
+    }
 }

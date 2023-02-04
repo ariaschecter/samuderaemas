@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('staff', function (Blueprint $table) {
             $table->id();
             $table->string('nama_staff');
+            $table->string('gambar_staff');
             $table->string('motivasi_staff');
             $table->string('jabatan_staff');
             $table->text('bio_staff');
