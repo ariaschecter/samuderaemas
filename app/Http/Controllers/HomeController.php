@@ -36,12 +36,6 @@ class HomeController extends Controller
 
     public function dashboard() {
         $chart_options = [
-            // 'chart_title' => 'Finance by months',
-            // 'report_type' => 'group_by_date',
-            // 'model' => 'App\Models\Finance',
-            // 'group_by_field' => 'created_at',
-            // 'group_by_period' => 'month',
-            // 'chart_type' => 'line',
             'chart_title' => 'Transactions by dates',
             'report_type' => 'group_by_date',
             'model' => 'App\Models\Finance',
@@ -52,8 +46,11 @@ class HomeController extends Controller
             'chart_type' => 'line',
         ];
         $chart1 = new LaravelChart($chart_options);
-        // dd($chart1);
+        $finance = Finance::sum('nominal_finance');
+        $pemasukan = Finance::whereYear('created_at', date('Y'))->whereMonth('created_at', date('m'))->where('type_finance', 'PEMASUKAN')->sum('nominal_finance');
+        $pengeluaran = Finance::whereYear('created_at', date('Y'))->whereMonth('created_at', date('m'))->where('type_finance', 'PENGELUARAN')->sum('nominal_finance');
+        $kegiatan = Kegiatan::all();
 
-        return view('admin.index', compact('chart1'));
+        return view('admin.index', compact('chart1', 'finance' ,'pemasukan', 'pengeluaran', 'kegiatan'));
     }
 }

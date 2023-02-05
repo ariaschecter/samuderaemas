@@ -69,13 +69,6 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="#" class="waves-effect">
-                        <i class="ri-settings-4-line"></i>
-                        <span>Setting</span>
-                    </a>
-                </li>
-
             </ul>
         </div>
         <!-- Sidebar -->
