@@ -19,6 +19,18 @@
         </div>
         <!-- end page title -->
 
+        <div class="row">
+            <div class="col-12">
+                {!! $chart1->renderHtml() !!}
+            </div>
+        </div>
+
     </div>
 </div>
+@endsection
+
+
+@section('javascript')
+{!! $chart1->renderChartJsLibrary() !!}
+{!! $chart1->renderJs() !!}
 @endsection

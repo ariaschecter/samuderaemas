@@ -54,7 +54,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('admin.dashboard') }}" class="waves-effect">
+                    <a href="{{ route('admin.finance.index') }}" class="waves-effect">
                         <i class="ri-funds-box-line"></i>
                         <span>Finance</span>
                     </a>

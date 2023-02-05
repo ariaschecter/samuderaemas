@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FinanceController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\KegiatanController;
@@ -23,15 +24,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::controller(HomeController::class)->group(function () {
+    Route::get('/dashboard', 'dashboard')->middleware(['auth'])->name('admin.dashboard');
     Route::get('/', 'index');
     Route::get('/kegiatan/{kegiatan:slug_kegiatan}', 'detail_kegiatan')->name('home.kegiatan.detail');
     Route::get('/wisata/{wisata:slug_wisata}', 'detail_wisata')->name('home.wisata.detail');
     Route::get('/staff', 'staff');
 });
-
-Route::get('/dashboard', function () {
-    return view('admin.index');
-})->middleware(['auth'])->name('admin.dashboard');
 
 Route::middleware('auth')->prefix('admin')->group(function () {
     Route::controller(KegiatanController::class)->group(function () {
@@ -102,6 +100,16 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('profile', 'profile')->name('profile');
         Route::post('profile/{user}', 'profile_update')->name('profile.update');
         Route::get('admin/logout', 'logout')->name('logout');
+    });
+
+    Route::controller(FinanceController::class)->group(function () {
+        Route::get('/finance', 'index')->name('admin.finance.index');
+        Route::get('/finance/add', 'create')->name('admin.finance.add');
+        Route::post('/finance/add', 'store')->name('admin.finance.store');
+        Route::get('/finance/show/{finance}', 'show')->name('admin.finance.show');
+        Route::get('/finance/edit/{finance}', 'edit')->name('admin.finance.edit');
+        Route::post('/finance/edit/{finance}', 'update')->name('admin.finance.update');
+        Route::get('/finance/delete/{finance}', 'destroy')->name('admin.finance.delete');
     });
 
 });
