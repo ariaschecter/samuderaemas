@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @include('template.favicon')
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('frontend/responsive_navbar.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/responsive_index.css') }}">
@@ -147,7 +148,7 @@
     <footer>
         <div class="footer">
             <div class="footer-description">
-                <img src="{{ asset('frontend/images/logo/logo-footer.svg') }}" alt="logo">
+                <img src="{{ asset('frontend/images/logo/logo.png') }}" alt="logo" width="50">
                 <p>BUMDES Samudera Emas merupakan suatu organisasi dibawah kepengurusan desa yang bertanggung jawab atas kegiatan yang ada pada desa</p>
             </div>
             <div class="footer-nav">

@@ -1,3 +1,3 @@
 <div class="logo">
-    <img src="{{ asset('frontend/images/logo/logo.svg') }}" alt="" >
+    <img src="{{ asset('frontend/images/logo/logo.png') }}" alt="" width="50" >
 </div>

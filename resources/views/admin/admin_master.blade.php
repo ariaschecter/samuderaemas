@@ -4,13 +4,13 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>Admin | Batik Project</title>
+        <title>Admin | Samudera Emas</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesdesign" name="author" />
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{ asset('frontend/assets/images/favicon/icon.jpg') }}">
+        <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico') }}">
 
         <!-- jquery.vectormap css -->
         <link href="{{ asset('backend/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css') }}" rel="stylesheet" type="text/css" />

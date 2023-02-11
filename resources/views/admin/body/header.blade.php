@@ -3,12 +3,12 @@
         <div class="d-flex">
             <!-- LOGO -->
             <div class="navbar-brand-box">
-                <a href="{{ route('admin.dashboard') }}" class="logo logo-light">
+                <a href="{{ url('/') }}" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="{{ asset('backend/assets/images/logo.jpg') }}" alt="logo-sm-light" height="40">
+                        <img src="{{ asset('backend/assets/images/logo.jpg') }}" alt="logo-sm-light" height="55">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('backend/assets/images/logo.jpg') }}" alt="logo-light" height="75">
+                        <img src="{{ asset('backend/assets/images/logo.jpg') }}" alt="logo-light" height="60">
                     </span>
                 </a>
             </div>
