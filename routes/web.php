@@ -4,6 +4,7 @@ use App\Http\Controllers\FinanceController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\KegiatanController;
+use App\Http\Controllers\PaymentMethodController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\TiketController;
@@ -28,6 +29,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index');
     Route::get('/kegiatan/{kegiatan:slug_kegiatan}', 'detail_kegiatan')->name('home.kegiatan.detail');
     Route::get('/wisata/{wisata:slug_wisata}', 'detail_wisata')->name('home.wisata.detail');
+    Route::get('/usaha/{usaha:usaha_slug}', 'detail_usaha')->name('home.usaha.detail');
     Route::get('/staff', 'staff');
 });
 
@@ -111,6 +113,15 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::post('/finance/edit/{finance}', 'update')->name('admin.finance.update');
         Route::get('/finance/delete/{finance}', 'destroy')->name('admin.finance.delete');
         Route::post('/finance/graph', 'graph')->name('admin.graph.index');
+    });
+
+    Route::controller(PaymentMethodController::class)->group(function () {
+        Route::get('/payment-method', 'index')->name('admin.payment_method.index');
+        Route::get('/payment-method/add', 'create')->name('admin.payment_method.add');
+        Route::post('/payment-method/add', 'store')->name('admin.payment_method.store');
+        Route::get('/payment-method/edit/{payment_method}', 'edit')->name('admin.payment_method.edit');
+        Route::post('/payment-method/edit/{payment_method}', 'update')->name('admin.payment_method.update');
+        Route::get('/payment-method/delete/{payment_method}', 'destroy')->name('admin.payment_method.delete');
     });
 
 });

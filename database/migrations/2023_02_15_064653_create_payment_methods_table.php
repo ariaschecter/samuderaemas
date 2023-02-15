@@ -13,16 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('usahas', function (Blueprint $table) {
+        Schema::create('payment_methods', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_usaha');
-            $table->string('usaha_slug');
-            $table->text('deskripsi_usaha');
-            $table->integer('harga_usaha');
-            $table->string('satuan_usaha');
-            $table->string('cp_usaha');
-            $table->string('lokasi_usaha');
-            $table->text('link_lokasi_usaha');
+            $table->string('payment_method');
+            $table->string('payment_name');
+            $table->string('payment_rekening');
             $table->timestamps();
         });
     }
@@ -34,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('usahas');
+        Schema::dropIfExists('payment_methods');
     }
 };

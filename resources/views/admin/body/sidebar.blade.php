@@ -59,6 +59,12 @@
                         <span>Finance</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('admin.payment_method.index') }}" class="waves-effect">
+                        <i class="ri-bank-card-line"></i>
+                        <span>Payment Method</span>
+                    </a>
+                </li>
 
                 <li class="menu-title">Admin</li>
 

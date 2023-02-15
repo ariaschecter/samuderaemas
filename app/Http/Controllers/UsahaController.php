@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Image;
 use App\Models\Usaha;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class UsahaController extends Controller
 {
@@ -25,6 +26,7 @@ class UsahaController extends Controller
         $validated = $request->validate([
             'nama_usaha' => 'required',
             'lokasi_usaha' => 'required',
+            'link_lokasi_usaha' => 'required',
             'deskripsi_usaha' => 'required',
             'harga_usaha' => 'required',
             'satuan_usaha' => 'required',
@@ -33,7 +35,7 @@ class UsahaController extends Controller
         ]);
 
         $image = $request->file('gambar_usaha')->store('image/usaha');
-
+        $validated['usaha_slug'] = Str::slug($request->nama_usaha);
         $usaha = Usaha::create($validated);
         Image::create([
             'usaha_id' => $usaha->id,
@@ -55,12 +57,13 @@ class UsahaController extends Controller
         $validated = $request->validate([
             'nama_usaha' => 'required',
             'lokasi_usaha' => 'required',
+            'link_lokasi_usaha' => 'required',
             'deskripsi_usaha' => 'required',
             'harga_usaha' => 'required',
             'satuan_usaha' => 'required',
             'cp_usaha' => 'required',
         ]);
-
+        $validated['usaha_slug'] = Str::slug($request->nama_usaha);
         $usaha->update($validated);
 
         $notification = [

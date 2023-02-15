@@ -56,6 +56,17 @@
                     <!-- end row -->
 
                     <div class="row mb-3">
+                        <label for="link_lokasi_usaha" class="col-sm-2 col-form-label">Link Lokasi Usaha</label>
+                        <div class="col-sm-10">
+                            <input name="link_lokasi_usaha" class="form-control" type="text" value="{{ $usaha->link_lokasi_usaha }}" id="link_lokasi_usaha">
+                            @error('link_lokasi_usaha')
+                                <span class="text-danger"> {{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row mb-3">
                         <label for="cp_usaha" class="col-sm-2 col-form-label">Kontak Usaha (CP)</label>
                         <div class="col-sm-10">
                             <input name="cp_usaha" class="form-control" type="text" value="{{ $usaha->cp_usaha }}" id="cp_usaha">

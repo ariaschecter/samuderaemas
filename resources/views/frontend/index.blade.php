@@ -118,11 +118,6 @@
                         <div class="focal-bussiness">
                             <img src="{{ asset('storage/' . $usaha->image->first()->gambar) }}" alt="">
                         </div>
-                        @foreach ($usaha->image->skip(1)->take(4) as $gambar)
-                        <div class="item-bussiness">
-                            <img src="{{ asset('storage/' . $gambar->gambar) }}" alt="">
-                        </div>
-                        @endforeach
                     </div>
                     <div class="text-bussiness">
                         <div class="bussiness-name">
@@ -131,13 +126,10 @@
                         <img src="{{ asset('frontend/images/image-content/destination/line.png') }}" alt="">
                         <div class="bussiness-description">
                             <div class="about-bussiness">
-                                {!! $usaha->deskripsi_usaha !!}
+
+                                {!! Str::of($usaha->deskripsi_usaha)->limit(710) !!}
                             </div>
-                            <p class="focus-description">Harga : Rp. {{ number_format($usaha->harga_usaha) }} / {{ $usaha->satuan_usaha }}</p>
-                            <div class="contact-bussiness">
-                                <p class="focus-description">Hubungi Kami :<a href="https://wa.me/{{ $usaha->cp_usaha }}" target="_blank">+{{ $usaha->cp_usaha }}</a></p>
-                                <p class="focus-description">Lokasi : {{ $usaha->lokasi_usaha }}</p>
-                            </div>
+                            <p class="focus-description"><a href="{{ route('home.usaha.detail', $usaha->usaha_slug) }}">Detail Usaha</a></p>
                         </div>
                     </div>
                 </section>
@@ -162,9 +154,9 @@
                 <p>Kontak Kami</p>
                 <p>Lokasi : Gombangan, Tumpakrejo, Gedangan, Kota Malang, Jawa Timur, 65178</p>
                 <div class="sosmed">
-                    <img src="/images/sosmed/whatsapp.svg" alt=""><a href=""></a></img>
-                    <img src="/images/sosmed/gmail.svg" alt=""><a href=""></a></img>
-                    <img src="/images/sosmed/instagram.svg" alt=""><a href=""></a></img>
+                    <a href=""><img src="{{ asset('frontend/images/sosmed/whatsapp.svg') }}" alt=""></a>
+                    <a href=""><img src="{{ asset('frontend/images/sosmed/gmail.svg') }}" alt=""></a>
+                    <a href=""><img src="{{ asset('frontend/images/sosmed/instagram.svg') }}" alt=""></a>
                 </div>
             </div>
         </div>

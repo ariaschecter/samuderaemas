@@ -15,7 +15,7 @@ p {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 700px) {  
 
     main{
         margin: 0px 30px;
@@ -54,12 +54,12 @@ p {
         line-height: 33px;
         color: #2C2C2C;
     }
-    .text-focal-point-bumdes-activity .description{
+    .text-focal-point-bumdes-activity .description{        
         width: 300px;
         height: 57px;
-        white-space: normal;
+        white-space: normal;         
         overflow: hidden;
-        text-overflow: ellipsis;
+        text-overflow: ellipsis; 
         font-weight: 400;
         font-size: 14px;
         line-height: 19px;
@@ -73,10 +73,10 @@ p {
         text-decoration: none;
     }
 
-    .slide-activity{
+    .slide-activity{        
         display: flex;
         flex-direction: row;
-        align-items: center;
+        align-items: center;        
         gap: 20px;
         overflow-x: scroll;
         padding: 5px 0px;
@@ -92,7 +92,7 @@ p {
     .slide-activity .bumdes-activity-image{
         width: 80px;
         height: 80px;
-        filter: drop-shadow(0px 2.13333px 5.33333px rgba(0, 0, 0, 0.06));
+        filter: drop-shadow(0px 2.13333px 5.33333px rgba(0, 0, 0, 0.06));        
     }
     .slide-activity .bumdes-activity-image img{
         width: 80px;
@@ -110,16 +110,16 @@ p {
         width: 201px;
         height: max-content;
     }
-    .slide-activity .text-bumdes-activity .description{
+    .slide-activity .text-bumdes-activity .description{        
         width: 189px;
         height: 30px;
         white-space: normal;         
         overflow: hidden;
-        text-overflow: ellipsis;
+        text-overflow: ellipsis; 
         font-weight: 400;
         font-size: 11px;
         line-height: 15px;
-        color: #ababab;
+        color: #ababab;        
     }
     .slide-activity .text-bumdes-activity .read-more{
         font-weight: 300;
@@ -135,7 +135,7 @@ p {
         align-items: center;
         padding: 0px;
         gap: 20px;
-        width: 300px;
+        width: 300px;              
     }
     .image-destination{
         width: 300px;
@@ -152,8 +152,8 @@ p {
         align-items: flex-start;
         padding: 0px;
         gap: 12px;
-        width: 300px;
-    }
+        width: 300px;        
+    }    
     .place-destination{
         font-weight: 500;
         font-size: 24px;
@@ -190,15 +190,15 @@ p {
     }
     .grid-container{
         display: grid;
-        grid-template-columns: auto auto auto auto;
-        gap: 3px;
+        grid-template-columns: auto auto auto auto;     
+        gap: 3px;   
         padding: 10px 0px;
         width: 300px;
     }
     .focal-bussiness{
         width: 300px;
         height: 195px;
-        grid-column: 1/5;
+        grid-column: 1/5;         
     }
     .focal-bussiness img{
         border-radius: 10px;
@@ -241,14 +241,12 @@ p {
         line-height: 19px;
         color: #ababab;
     }
-    .bussiness-description .focus-description{
-        font-weight: 600;
-        color: #2C2C2C;
-    }
-    .bussiness-description a{
-        font-weight: 400;
-        text-decoration: none;
+    .bussiness-description .focus-description a{
+        font-weight: 300;
+        font-size: 10px;
+        line-height: 14px;
         color: #FFA800;
+        text-decoration: none;
     }
 }
 @media screen and (min-width: 701px) {
@@ -258,7 +256,7 @@ p {
     main{
         width: 100%;
     }
-    .tagline-our-activity{
+    .tagline-our-activity{            
         display: flex;
         justify-content: center;
         font-weight: 700;
@@ -276,7 +274,7 @@ p {
         margin: 0px 100px;
     }
     .focal-image{
-       width: 520px;
+       width: 520px; 
        height: 520px;
        filter: drop-shadow(4px 0px 20px rgba(0, 0, 0, 0.06)) drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.06));
     }
@@ -294,7 +292,7 @@ p {
         gap: 10px;
         width: 500px;
     }
-    .text-focal-point-bumdes-activity .tagline{
+    .text-focal-point-bumdes-activity .tagline{        
         font-weight: 600;
         font-size: 24px;
         line-height: 33px;
@@ -317,17 +315,17 @@ p {
         flex-direction: column;
         align-items: flex-start;
         padding-left:10px;
-        gap: 4px;
+        gap: 4px;        
         height: 696px;
         overflow-y: scroll;
-
+        
     }
     .slide-activity::-webkit-scrollbar{
-        width: 5px;
+        width: 5px;        
     }
     .slide-activity::-webkit-scrollbar-track {
         border-radius: 10px;
-        background: #b9d9f3;
+        background: #b9d9f3; 
       }
     .slide-activity::-webkit-scrollbar-thumb{
         border-radius: 10px;
@@ -364,7 +362,7 @@ p {
         align-items: flex-start;
         padding: 0px;
         gap: 14px;
-        width: 500px;
+        width: 500px;        
     }
     .text-bumdes-activity .tagline{
         font-weight: 600;
@@ -391,7 +389,7 @@ p {
     .our-destinations{
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: center;    
         padding: 0px;
         gap: 60px;
     }
@@ -453,7 +451,7 @@ p {
         line-height: 25px;
         color: #ababab;
     }
-
+    
     article{
         margin-top: 120px;
         display: flex;
@@ -464,18 +462,18 @@ p {
     .our-bussiness{
         display: flex;
         flex-direction: row;
-        align-items: center;
+        align-items: center;        
         padding: 0px 10px;
         gap: 40px;
         width: 1247px;
         overflow-x: scroll;
     }
-    .our-bussiness::-webkit-scrollbar{
+    .our-bussiness::-webkit-scrollbar{        
         height: 5px;
-    }
+    }    
     .our-bussiness::-webkit-scrollbar-track {
         border-radius: 10px;
-        background: #b9d9f3;
+        background: #b9d9f3; 
       }
     .our-bussiness::-webkit-scrollbar-thumb{
         border-radius: 10px;
@@ -488,20 +486,20 @@ p {
         display: flex;
         flex-direction: row;
         align-items: center;
-
+        
         gap: 48px;
     }
     .grid-container{
         display: grid;
-        grid-template-columns: auto auto auto auto;
-        gap: 13px;
+        grid-template-columns: auto auto auto auto;     
+        gap: 13px;   
         padding: 10px 0px;
-        width: 650px;
+        width: 650px; 
     }
     .focal-bussiness{
         width: 650px;
         height: 423px;
-        grid-column: 1/5;
+        grid-column: 1/5;         
     }
     .focal-bussiness img{
         width: 650px;
@@ -529,7 +527,7 @@ p {
     .text-bussiness img{
         width: 420px;
         height: 5px;
-        background: #FFA800;
+        background: #FFA800;        
     }
     .bussiness-name{
         font-weight: 600;
@@ -556,20 +554,11 @@ p {
         align-items: flex-start;
         padding: 0px;
         gap: 10px;
-    }
-    .contact-bussiness{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0px;
-        gap: 10px;
-    }
-    .contact-bussiness a{
+    }    
+    .focus-description a{
         color: #FFA800;
-        font-weight: 600;
-    }
-    .focus-description {
-        color: #2C2C2C;
         font-weight: 500;
+        font-size: 14px;
+        line-height: 19px;
     }
 }

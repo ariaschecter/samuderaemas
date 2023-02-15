@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('frontend/responsive_navbar-detail.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/responsive_activity.css') }}">
-    <title>Detail Wisata</title>
+    <title>Detail Kegiatan</title>
 </head>
 <body>
     <header>

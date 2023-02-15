@@ -1,0 +1,468 @@
+@media screen and (min-width: 701px) {
+    main{
+        display: flex;
+        margin-top: -171px;
+        justify-content: center;
+        padding: 0 100px;
+    }
+    .container{
+        width: 1239px;    
+        background: #FFFFFF;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.06);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        padding: 75px 105px;
+    }
+    .bussiness-place{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 6px;
+    }
+    .name-bussiness{
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 28px;    
+        color: #2C2C2C;
+    }
+    .place-bussiness{
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 28px;
+        color: #BFBFBF;
+    }
+    .view-bussiness{        
+        display: grid;    
+        gap: 5px;    
+        width: 1028px;
+        height: 500px;
+        aspect-ratio: 3;
+        grid-template-columns:repeat(3,auto);        
+    }
+    
+     .view-bussiness > img{
+        width: 0;
+        height: 0;
+        min-height: 100%;
+        min-width: 100%;
+        object-fit: cover;
+        cursor:pointer;
+        filter:grayscale(90%);
+        transition: .50s linear;
+    }
+    
+    .view-bussiness img:hover{
+        filter: grayscale(0);
+        width: calc(1028px);
+        height: calc(500px);
+        border-radius: 20px;
+    }
+    .about-bussiness{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 1028px;
+    }
+    .about-bussiness p{
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        color: #2C2C2C;
+    }
+    .description-about-bussiness{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;    
+    }
+    .description-about-bussiness p{
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 25px;
+        color: #ABABAB;
+    }
+    .price-bussiness{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 200px;        
+    }
+    .price-bussiness p{
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        color: #2C2C2C;
+    }
+    .price{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 10px;
+        gap: 8px;
+            
+        height: 50px;
+        
+        background: #FFFFFF;
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    .payment-bussiness{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 1028px;
+    }
+    .payment-bussiness p{
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        color: #2C2C2C;
+    }
+    .payment-method{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    .payment-method p{
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 25px;
+        color: #2c2c2c;
+    }
+    .list-method{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    .list-atm{
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+    }
+    .card-method{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background: #FFFFFF;
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);        
+    }
+    .card-method p{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #2c2c2c;
+    }
+    .image-card{
+        height: 40px;
+        width: 200px;                
+    }
+    .image-card img{
+        height: 40px;
+    }
+    .contact-bussiness{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 200px;        
+    }
+    .contact-bussiness p{
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        color: #2C2C2C;
+    }
+    .list-contact{
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+    }
+    .contact{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 10px;
+        gap: 4px;
+            
+        height: 50px;
+        
+        background: #FFFFFF;
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+    .contact img{
+        height: 40px;
+    }
+    
+        
+    
+    .location-bussiness{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 24px;
+        width: 1028px;
+    }
+    .location-bussiness p{
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        color: #2C2C2C;
+    }
+    .location-address p{
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 28px;
+        color: #A8A8A8;
+    }
+    .image-location-destination{
+        width: 1028px;  
+        height: 500px;
+    }    
+    
+}
+@media screen and (max-width: 700px) {    
+    main{
+        display: flex;
+        margin-top: -248px;
+        justify-content: center;
+        padding: 0 30px;
+        margin-bottom: 50px;
+    }
+    .container{
+        width: 300px; 
+        background: #FFFFFF;
+        background: #FFFFFF;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.06);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 50px;
+    } 
+    .bussiness-place{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 4px;
+        width: 280px;        
+    }
+    .bussiness-place .name-bussiness{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        color: #2C2C2C;
+    }
+    .bussiness-place .place-bussiness{
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        color: #ABABAB;
+    }
+
+    .view-bussiness{        
+        display: grid;    
+        gap: 5px;    
+        width: 280px;
+        height: 200px;
+        aspect-ratio: 3;
+        grid-template-columns:repeat(3,auto);        
+    }
+    
+     .view-bussiness > img{
+        width: 0;
+        height: 0;
+        min-height: 100%;
+        min-width: 100%;
+        object-fit: cover;
+        cursor: pointer;
+        filter:grayscale(90%);
+        transition: .50s linear;
+    }
+    
+    .view-bussiness img:hover{
+        filter: grayscale(0);
+        width: calc(280px);
+        height: calc(136px);
+        border-radius: 10px;
+    }  
+
+    .about-bussiness{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 12px;
+        width: 280px;
+    }
+    .about-bussiness p{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 28px;
+        color: #2C2C2C;
+    }
+    .description-about-bussiness{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 24px;
+    }
+    .description-about-bussiness p{
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        color: #ABABAB;
+    }
+    .price-bussiness{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        width: 280px;        
+    }
+    .price-bussiness p{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 28px;
+        color: #2C2C2C;
+    }
+    .price{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 10px;
+        gap: 8px;
+            
+        height: 50px;
+        
+        background: #FFFFFF;
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    .payment-bussiness{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        width: 280px; 
+    }
+    .payment-bussiness p{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 28px;
+        color: #2C2C2C;
+    }
+    .payment-method{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .payment-method p{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+        color: #2C2C2C;
+    }
+    .list-method{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .list-atm{
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+    }
+    .card-method{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background: #FFFFFF;
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);        
+    }
+    .card-method p{
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 19px;
+        color: #2c2c2c;
+    }
+    .image-card{            
+        
+        height: 40px;      
+    }
+    .image-card img{        
+        height: 40px;
+    }
+    .contact-bussiness{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        width: 280px;     
+    }
+    .contact-bussiness p{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+        color: #2C2C2C;
+    }
+    .list-contact{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    .contact{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 5px 10px;
+        gap: 4px;
+            
+        height: 50px;
+        
+        background: #FFFFFF;
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+    .contact img{
+        height: 40px;
+    }            
+    .location-bussiness{
+        width: 280px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .location-bussiness p{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        color: #2C2C2C;
+    }
+    .location-address p{
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        color: #A8A8A8;
+    }
+    .image-location-destination{
+        width: 280px;
+        height: 280px;
+    }    
+}
