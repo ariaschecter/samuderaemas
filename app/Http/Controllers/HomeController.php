@@ -41,7 +41,7 @@ class HomeController extends Controller
             'report_type' => 'group_by_date',
             'model' => 'App\Models\Finance',
             'group_by_field' => 'created_at',
-            'group_by_period' => 'month',
+            'group_by_period' => 'day',
             'filter_field' => 'created_at',
             'filter_period' => 'month',
             'date_format' => 'd M Y',
@@ -49,6 +49,7 @@ class HomeController extends Controller
             'aggregate_field' => 'nominal_finance',
             'chart_type' => 'line',
             'chart_color' => '255,215,0',
+            'continuous_time' => true,
         ];
         $chart1 = new LaravelChart($chart_options);
         $finance = Finance::sum('nominal_finance');

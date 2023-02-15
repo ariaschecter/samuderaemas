@@ -90,6 +90,7 @@ class FinanceController extends Controller
             'range_date_start' => Carbon::parse($request->date_start),
             'range_date_end' => Carbon::parse($request->date_end),
             'chart_color' => '255,215,0',
+            // 'continuous_time' => true,
         ];
         $chart1 = new LaravelChart($chart_options);
         return view('admin.finance.graph', compact('chart1', 'string'));
