@@ -110,6 +110,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('/finance/edit/{finance}', 'edit')->name('admin.finance.edit');
         Route::post('/finance/edit/{finance}', 'update')->name('admin.finance.update');
         Route::get('/finance/delete/{finance}', 'destroy')->name('admin.finance.delete');
+        Route::post('/finance/graph', 'graph')->name('admin.graph.index');
     });
 
 });

@@ -21,7 +21,7 @@
         </div>
         <!-- end page title -->
 
-        <a href="{{ route('admin.gambar.add.usaha', $usaha->id) }}" class="btn btn-primary mb-2">Tambah Gambar (max : 4)</a>
+        <a href="{{ route('admin.gambar.add.usaha', $usaha->id) }}" class="btn btn-primary mb-2">Tambah Gambar (max : 5)</a>
 
         <div class="row">
             <div class="col-12">

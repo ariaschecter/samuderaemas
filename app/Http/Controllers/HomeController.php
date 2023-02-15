@@ -7,6 +7,7 @@ use App\Models\Kegiatan;
 use App\Models\Staff;
 use App\Models\Usaha;
 use App\Models\Wisata;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use LaravelDaily\LaravelCharts\Classes\LaravelChart;
 
@@ -36,14 +37,18 @@ class HomeController extends Controller
 
     public function dashboard() {
         $chart_options = [
-            'chart_title' => 'Transactions by dates',
+            'chart_title' => 'Finance by Month',
             'report_type' => 'group_by_date',
             'model' => 'App\Models\Finance',
             'group_by_field' => 'created_at',
-            'group_by_period' => 'day',
+            'group_by_period' => 'month',
+            'filter_field' => 'created_at',
+            'filter_period' => 'month',
+            'date_format' => 'd M Y',
             'aggregate_function' => 'sum',
             'aggregate_field' => 'nominal_finance',
             'chart_type' => 'line',
+            'chart_color' => '255,215,0',
         ];
         $chart1 = new LaravelChart($chart_options);
         $finance = Finance::sum('nominal_finance');

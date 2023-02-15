@@ -42,6 +42,23 @@
                     <div class="card-body">
                         <div class="d-flex">
                             <div class="flex-grow-1">
+                                <p class="text-truncate font-size-14 mb-2">Keuangan <span class="text-secondary">Bulan Ini</span></p>
+                                <h4 class="mb-2">Rp. {{ number_format($pemasukan + $pengeluaran) }}</h4>
+                            </div>
+                            <div class="avatar-sm">
+                                <span class="avatar-title bg-light text-secondary rounded-3">
+                                    <i class="mdi mdi-currency-usd font-size-24"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div><!-- end cardbody -->
+                </div><!-- end card -->
+            </div><!-- end col -->
+            <div class="col-xl-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <div class="flex-grow-1">
                                 <p class="text-truncate font-size-14 mb-2">Total Pemasukan <span class="text-success">Bulan ini</span></p>
                                 <h4 class="mb-2">Rp. {{ number_format($pemasukan) }}</h4>
                             </div>
@@ -65,23 +82,6 @@
                             <div class="avatar-sm">
                                 <span class="avatar-title bg-light text-danger rounded-3">
                                     <i class="mdi mdi-currency-usd font-size-24"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div><!-- end cardbody -->
-                </div><!-- end card -->
-            </div><!-- end col -->
-            <div class="col-xl-3 col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <div class="flex-grow-1">
-                                <p class="text-truncate font-size-14 mb-2">Total Kegiatan</p>
-                                <h4 class="mb-2">{{ count($kegiatan) }}</h4>
-                            </div>
-                            <div class="avatar-sm">
-                                <span class="avatar-title bg-light text-info rounded-3">
-                                    <i class="ri-article-line font-size-24"></i>
                                 </span>
                             </div>
                         </div>

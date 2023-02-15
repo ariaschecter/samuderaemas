@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 
-    <head>
+    <head>  
 
         <meta charset="utf-8" />
         <title>Login | Admin</title>
@@ -9,7 +9,7 @@
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesdesign" name="author" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{ asset('frontend/assets/images/favicon/icon.jpg') }}">
+        <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico') }}">
 
         <!-- Bootstrap Css -->
         <link href="{{ asset('backend/assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />

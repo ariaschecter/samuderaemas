@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Finance;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use LaravelDaily\LaravelCharts\Classes\LaravelChart;
 
 class FinanceController extends Controller
 {
     public function index() {
-        $finances = Finance::all();
+        $finances = Finance::latest()->get();
         return view('admin.finance.index', compact('finances'));
     }
 
@@ -50,7 +52,7 @@ class FinanceController extends Controller
         if ($request->type_finance == 'PENGELUARAN') {
             $validated['nominal_finance'] *= -1;
         }
-        
+
         $finance->update($validated);
 
         $notification = [
@@ -69,5 +71,27 @@ class FinanceController extends Controller
         ];
 
         return redirect()->back()->with($notification);
+    }
+
+
+    public function graph(Request $request) {
+        $string = Carbon::parse($request->date_start)->format('d M Y') . ' - ' . Carbon::parse($request->date_end)->format('d M Y');
+        $chart_options = [
+            'chart_title' => 'Finance By Month',
+            'report_type' => 'group_by_date',
+            'model' => 'App\Models\Finance',
+            'group_by_field' => 'created_at',
+            'group_by_period' => 'day',
+            'filter_field' => 'created_at',
+            'date_format' => 'd M Y',
+            'aggregate_function' => 'sum',
+            'aggregate_field' => 'nominal_finance',
+            'chart_type' => 'line',
+            'range_date_start' => Carbon::parse($request->date_start),
+            'range_date_end' => Carbon::parse($request->date_end),
+            'chart_color' => '255,215,0',
+        ];
+        $chart1 = new LaravelChart($chart_options);
+        return view('admin.finance.graph', compact('chart1', 'string'));
     }
 }

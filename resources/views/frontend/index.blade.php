@@ -135,7 +135,7 @@
                             </div>
                             <p class="focus-description">Harga : Rp. {{ number_format($usaha->harga_usaha) }} / {{ $usaha->satuan_usaha }}</p>
                             <div class="contact-bussiness">
-                                <p class="focus-description">Hubungi Kami :<a href="tel:{{ $usaha->cp_usaha }}">+{{ $usaha->cp_usaha }}</a></p>
+                                <p class="focus-description">Hubungi Kami :<a href="https://wa.me/{{ $usaha->cp_usaha }}" target="_blank">+{{ $usaha->cp_usaha }}</a></p>
                                 <p class="focus-description">Lokasi : {{ $usaha->lokasi_usaha }}</p>
                             </div>
                         </div>
