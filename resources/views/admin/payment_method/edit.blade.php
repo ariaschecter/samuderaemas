@@ -67,7 +67,7 @@
                     <div class="row mb-3">
                         <label for="example-text-input" class="col-sm-2 col-form-label"> </label>
                         <div class="col-sm-10">
-                            <img id="showImage" class="img-fluid img-thumbnail" src="{{ asset('storage/' . $payment_method->payment_method) }}" alt="Image Show">
+                            <img id="showImage" class="img-fluid img-thumbnail" src="{{ asset($payment_method->payment_method) }}" alt="Image Show">
                         </div>
                     </div>
                     <!-- end row -->

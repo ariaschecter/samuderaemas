@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Staff;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Images;
 
 class StaffController extends Controller
 {
@@ -26,7 +27,11 @@ class StaffController extends Controller
             'gambar_staff' => 'required|file|image|max:5120',
         ]);
 
-        $validated['gambar_staff'] = $request->file('gambar_staff')->store('image/staff');
+        $image = $request->file('gambar_staff');
+        $name_gen = time() . hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+        $save_url = 'image/' . $name_gen;
+        Images::make($image)->save($save_url);
+        $validated['gambar_staff'] = $save_url;
 
         Staff::create($validated);
 
@@ -52,7 +57,11 @@ class StaffController extends Controller
 
         if ($request->gambar_staff) {
             Storage::delete($staff->gambar_staff);
-            $validated['gambar_staff'] = $request->file('gambar_staff')->store('image/staff');
+            $image = $request->file('gambar_staff');
+            $name_gen = time() . hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+            $save_url = 'image/' . $name_gen;
+            Images::make($image)->save($save_url);
+            $validated['gambar_staff'] = $save_url;
         }
 
         $staff->update($validated);

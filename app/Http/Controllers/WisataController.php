@@ -6,6 +6,7 @@ use App\Models\Image;
 use App\Models\Wisata;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Images;
 
 class WisataController extends Controller
 {
@@ -32,14 +33,17 @@ class WisataController extends Controller
             'gambar_wisata' => 'required|file|image|max:5120',
         ]);
 
-        $image = $request->file('gambar_wisata')->store('image/wisata');
+        $image = $request->file('gambar_wisata');
+        $name_gen = time() . hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+        $save_url = 'image/' . $name_gen;
+        Images::make($image)->save($save_url);
 
         $validated['slug_wisata'] = Str::slug($request->judul_wisata);
         $wisata = Wisata::create($validated);
 
         Image::create([
             'wisata_id' => $wisata->id,
-            'gambar' => $image,
+            'gambar' => $save_url,
         ]);
 
         $notification = [

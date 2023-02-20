@@ -50,7 +50,7 @@
                                         <td>{{ $i++ }}</td>
                                         <td>{{ $staff->nama_staff }}</td>
                                         <td>
-                                            <a href="{{ asset('storage/' . $staff->gambar_staff) }}" class="image-popup-no-margins"><img src="{{ asset('storage/' . $staff->gambar_staff) }}" style="height: 10em" alt="Gambar Staff"></a>
+                                            <a href="{{ asset($staff->gambar_staff) }}" class="image-popup-no-margins"><img src="{{ asset($staff->gambar_staff) }}" style="height: 10em" alt="Gambar Staff"></a>
                                         </td>
                                         <td>{{ $staff->jabatan_staff }}</td>
                                         <td>{{ $staff->motivasi_staff }}</td>

@@ -6,6 +6,7 @@ use App\Models\Image;
 use App\Models\Kegiatan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Images;
 
 class KegiatanController extends Controller
 {
@@ -30,13 +31,16 @@ class KegiatanController extends Controller
             'gambar_kegiatan' => 'required|file|image|max:5120',
         ]);
 
-        $image = $request->file('gambar_kegiatan')->store('image/kegiatan');
+        $image = $request->file('gambar_kegiatan');
+        $name_gen = time() . hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+        $save_url = 'image/' . $name_gen;
+        Images::make($image)->save($save_url);
         $validated['slug_kegiatan'] = Str::slug($request->judul_kegiatan);
 
         $kegiatan = Kegiatan::create($validated);
         Image::create([
             'kegiatan_id' => $kegiatan->id,
-            'gambar' => $image,
+            'gambar' => $save_url,
         ]);
 
         $notification = [

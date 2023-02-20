@@ -63,7 +63,7 @@
                 @endphp
                     <section class="focal-point-bumdes-activity">
                         <div class="focal-image">
-                            <img src="{{ asset('storage/' . $satu->image->first()->gambar) }}" alt="">
+                            <img src="{{ asset($satu->image->first()->gambar) }}" alt="">
                         </div>
                         <div class="text-focal-point-bumdes-activity">
                             <p class="tagline">{{ $satu->judul_kegiatan }}</p>
@@ -75,7 +75,7 @@
                     @foreach ($kegiatans->skip(1)->take(PHP_INT_MAX)->get() as $kegiatan)
                         <div class="bumdes-activity">
                             <div class="bumdes-activity-image">
-                                <img src="{{ asset('storage/' . $kegiatan->image->first()->gambar) }}" alt="">
+                                <img src="{{ asset($kegiatan->image->first()->gambar) }}" alt="">
                             </div>
                             <div class="text-bumdes-activity">
                                 <p class="tagline">{{ $kegiatan->judul_kegiatan }}</p>
@@ -93,7 +93,7 @@
                 @foreach ($wisatas as $wisata)
                     <section class="destination-content">
                         <div class="image-destination">
-                            <img src="{{ asset('storage/' . $wisata->image->first()->gambar) }}" alt="">
+                            <img src="{{ asset($wisata->image->first()->gambar) }}" alt="">
                         </div>
                         <div class="text-destination">
                             <div class="place-destination">
@@ -116,7 +116,7 @@
                 <section>
                     <div class="grid-container">
                         <div class="focal-bussiness">
-                            <img src="{{ asset('storage/' . $usaha->image->first()->gambar) }}" alt="">
+                            <img src="{{ asset($usaha->image->first()->gambar) }}" alt="">
                         </div>
                     </div>
                     <div class="text-bussiness">

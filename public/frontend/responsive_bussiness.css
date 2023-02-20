@@ -6,7 +6,7 @@
         padding: 0 100px;
     }
     .container{
-        width: 1239px;    
+        width: 1239px;
         background: #FFFFFF;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.06);
         border-radius: 20px;
@@ -25,7 +25,7 @@
     .name-bussiness{
         font-weight: 600;
         font-size: 32px;
-        line-height: 28px;    
+        line-height: 28px;
         color: #2C2C2C;
     }
     .place-bussiness{
@@ -34,15 +34,15 @@
         line-height: 28px;
         color: #BFBFBF;
     }
-    .view-bussiness{        
-        display: grid;    
-        gap: 5px;    
+    .view-bussiness{
+        display: grid;
+        gap: 5px;
         width: 1028px;
         height: 500px;
         aspect-ratio: 3;
-        grid-template-columns:repeat(3,auto);        
+        grid-template-columns:repeat(3,auto);
     }
-    
+
      .view-bussiness > img{
         width: 0;
         height: 0;
@@ -53,7 +53,7 @@
         filter:grayscale(90%);
         transition: .50s linear;
     }
-    
+
     .view-bussiness img:hover{
         filter: grayscale(0);
         width: calc(1028px);
@@ -75,7 +75,7 @@
     .description-about-bussiness{
         display: flex;
         flex-direction: column;
-        gap: 24px;    
+        gap: 24px;
     }
     .description-about-bussiness p{
         font-weight: 400;
@@ -87,7 +87,7 @@
         display: flex;
         flex-direction: column;
         gap: 24px;
-        width: 200px;        
+        width: max-content;
     }
     .price-bussiness p{
         font-weight: 500;
@@ -102,9 +102,9 @@
         align-items: center;
         padding: 5px 10px;
         gap: 8px;
-            
+
         height: 50px;
-        
+
         background: #FFFFFF;
         box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
@@ -150,7 +150,7 @@
         align-items: center;
         padding: 10px 20px;
         background: #FFFFFF;
-        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);        
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
     }
     .card-method p{
         font-weight: 400;
@@ -160,7 +160,7 @@
     }
     .image-card{
         height: 40px;
-        width: 200px;                
+        width: 200px;
     }
     .image-card img{
         height: 40px;
@@ -169,7 +169,7 @@
         display: flex;
         flex-direction: column;
         gap: 24px;
-        width: 200px;        
+        width: 200px;
     }
     .contact-bussiness p{
         font-weight: 500;
@@ -189,9 +189,9 @@
         align-items: center;
         padding: 5px 10px;
         gap: 4px;
-            
+
         height: 50px;
-        
+
         background: #FFFFFF;
         box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
@@ -199,9 +199,9 @@
     .contact img{
         height: 40px;
     }
-    
-        
-    
+
+
+
     .location-bussiness{
         display: flex;
         flex-direction: column;
@@ -223,12 +223,12 @@
         color: #A8A8A8;
     }
     .image-location-destination{
-        width: 1028px;  
+        width: 1028px;
         height: 500px;
-    }    
-    
+    }
+
 }
-@media screen and (max-width: 700px) {    
+@media screen and (max-width: 700px) {
     main{
         display: flex;
         margin-top: -248px;
@@ -237,7 +237,7 @@
         margin-bottom: 50px;
     }
     .container{
-        width: 300px; 
+        width: 300px;
         background: #FFFFFF;
         background: #FFFFFF;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.06);
@@ -248,14 +248,14 @@
         align-items: center;
         padding-top: 10px;
         padding-bottom: 50px;
-    } 
+    }
     .bussiness-place{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         padding: 0px;
         gap: 4px;
-        width: 280px;        
+        width: 280px;
     }
     .bussiness-place .name-bussiness{
         font-weight: 500;
@@ -270,15 +270,15 @@
         color: #ABABAB;
     }
 
-    .view-bussiness{        
-        display: grid;    
-        gap: 5px;    
+    .view-bussiness{
+        display: grid;
+        gap: 5px;
         width: 280px;
         height: 200px;
         aspect-ratio: 3;
-        grid-template-columns:repeat(3,auto);        
+        grid-template-columns:repeat(3,auto);
     }
-    
+
      .view-bussiness > img{
         width: 0;
         height: 0;
@@ -289,13 +289,13 @@
         filter:grayscale(90%);
         transition: .50s linear;
     }
-    
+
     .view-bussiness img:hover{
         filter: grayscale(0);
         width: calc(280px);
         height: calc(136px);
         border-radius: 10px;
-    }  
+    }
 
     .about-bussiness{
         display: flex;
@@ -329,7 +329,7 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
-        width: 280px;        
+        width: max-content;
     }
     .price-bussiness p{
         font-weight: 500;
@@ -344,9 +344,9 @@
         align-items: center;
         padding: 5px 10px;
         gap: 8px;
-            
+
         height: 50px;
-        
+
         background: #FFFFFF;
         box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
@@ -357,7 +357,7 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
-        width: 280px; 
+        width: 280px;
     }
     .payment-bussiness p{
         font-weight: 500;
@@ -393,7 +393,7 @@
         align-items: center;
         padding: 10px 20px;
         background: #FFFFFF;
-        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);        
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
     }
     .card-method p{
         font-weight: 400;
@@ -401,11 +401,11 @@
         line-height: 19px;
         color: #2c2c2c;
     }
-    .image-card{            
-        
-        height: 40px;      
+    .image-card{
+
+        height: 40px;
     }
-    .image-card img{        
+    .image-card img{
         height: 40px;
     }
     .contact-bussiness{
@@ -413,7 +413,7 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
-        width: 280px;     
+        width: 280px;
     }
     .contact-bussiness p{
         font-weight: 400;
@@ -433,16 +433,16 @@
         align-items: center;
         padding: 5px 10px;
         gap: 4px;
-            
+
         height: 50px;
-        
+
         background: #FFFFFF;
         box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
     }
     .contact img{
         height: 40px;
-    }            
+    }
     .location-bussiness{
         width: 280px;
         display: flex;
@@ -464,5 +464,5 @@
     .image-location-destination{
         width: 280px;
         height: 280px;
-    }    
+    }
 }

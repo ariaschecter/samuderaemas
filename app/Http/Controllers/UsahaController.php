@@ -6,7 +6,7 @@ use App\Models\Image;
 use App\Models\Usaha;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-
+use Images;
 class UsahaController extends Controller
 {
     public function index() {
@@ -34,12 +34,16 @@ class UsahaController extends Controller
             'gambar_usaha' => 'required|file|image|max:5120',
         ]);
 
-        $image = $request->file('gambar_usaha')->store('image/usaha');
+        $image = $request->file('gambar_usaha');
+        $name_gen = time() . hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+        $save_url = 'image/' . $name_gen;
+        Images::make($image)->save($save_url);
+
         $validated['usaha_slug'] = Str::slug($request->nama_usaha);
         $usaha = Usaha::create($validated);
         Image::create([
             'usaha_id' => $usaha->id,
-            'gambar' => $image,
+            'gambar' => $save_url,
         ]);
 
         $notification = [

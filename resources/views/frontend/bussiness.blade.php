@@ -42,7 +42,7 @@
             </div>
             <div class="view-bussiness">
                 @foreach ($usaha->image->take(9) as $image)
-                    <img src="{{ asset('storage/' . $image->gambar) }}" alt="detail-bussiness">
+                    <img src="{{ asset($image->gambar) }}" alt="detail-bussiness">
                 @endforeach
             </div>
             <div class="about-bussiness">
@@ -66,7 +66,7 @@
                                 @foreach($payments as $payment)
                                     <div class="card-method">
                                         <div class="image-card">
-                                            <img src="{{ asset('storage/' . $payment->payment_method) }}" alt="Metode Pembayaran">
+                                            <img src="{{ asset($payment->payment_method) }}" alt="Metode Pembayaran">
                                         </div>
                                         <div class="rekening-number">
                                             <p>{{ $payment->payment_rekening }}</p>

@@ -21,7 +21,7 @@
         </div>
         <!-- end page title -->
 
-        <a href="{{ route('admin.gambar.add.usaha', $usaha->id) }}" class="btn btn-primary mb-2">Tambah Gambar (max : 5)</a>
+        <a href="{{ route('admin.gambar.add.usaha', $usaha->id) }}" class="btn btn-primary mb-2">Tambah Gambar (max : 9)</a>
 
         <div class="row">
             <div class="col-12">
@@ -46,7 +46,7 @@
                                     <tr>
                                         <td>{{ $i++ }}</td>
                                         <td>
-                                            <a href="{{ asset('storage/' . $gambar->gambar) }}" class="image-popup-no-margins"><img src="{{ asset('storage/' . $gambar->gambar) }}" style="height: 10em" alt="Gambar Kegiatan"></a>
+                                            <a href="{{ asset($gambar->gambar) }}" class="image-popup-no-margins"><img src="{{ asset($gambar->gambar) }}" style="height: 10em" alt="Gambar Kegiatan"></a>
                                         </td>
                                         <td>
                                             <a href="{{ route('admin.gambar.edit', $gambar->id) }}" class="btn btn-info sm" title="Edit Data"><i class="fas fa-edit"></i></a>

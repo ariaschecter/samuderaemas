@@ -47,7 +47,7 @@
                                     <tr>
                                         <td>{{ $i++ }}</td>
                                         <td>
-                                            <a href="{{ asset('storage/' . $payment_method->payment_method) }}" class="image-popup-no-margins"><img src="{{ asset('storage/' . $payment_method->payment_method) }}" style="height: 10em" alt="Gambar Logo Bank"></a>
+                                            <a href="{{ asset($payment_method->payment_method) }}" class="image-popup-no-margins"><img src="{{ asset($payment_method->payment_method) }}" style="height: 10em" alt="Gambar Logo Bank"></a>
                                         </td>
                                         <td>{{ $payment_method->payment_name }}</td>
                                         <td>{{ $payment_method->payment_rekening }}</td>

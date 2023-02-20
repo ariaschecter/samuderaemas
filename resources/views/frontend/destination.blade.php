@@ -42,7 +42,7 @@
             </div>
             <div class="view-destination">
                 @foreach ($wisata->image->take(9) as $image)
-                    <img src="{{ asset('storage/' . $image->gambar) }}" alt="detail-destination">
+                    <img src="{{ asset($image->gambar) }}" alt="detail-destination">
                 @endforeach
                 {{-- <img src="/images/image-content/detail-destination/wonogoro/wonogoro-5.png" alt="wonogoro"> --}}
 

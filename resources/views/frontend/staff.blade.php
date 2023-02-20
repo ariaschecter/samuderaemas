@@ -43,7 +43,7 @@
                 @foreach ($staffs as $staff)
                     <div class="staff-content {{ $i % 2 == 1 ? 'left-up' : 'right-down' }}">
                         <div class="image-staff">
-                            <img src="{{ asset('storage/' . $staff->gambar_staff) }}" alt="Foto {{ $staff->nama_staff }}">
+                            <img src="{{ asset($staff->gambar_staff) }}" alt="Foto {{ $staff->nama_staff }}">
                         </div>
                         <div class="description-staff">
                             <p class="tagline-staff">“ {{ $staff->motivasi_staff }} ”</p>

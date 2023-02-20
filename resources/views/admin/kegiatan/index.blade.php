@@ -49,7 +49,7 @@
                                         <td>{{ $i++ }}</td>
                                         <td>{{ $kegiatan->judul_kegiatan }}</td>
                                         <td>
-                                            <a href="{{ asset('storage/' . $kegiatan->image->first()->gambar) }}" class="image-popup-no-margins"><img src="{{ asset('storage/' . $kegiatan->image->first()->gambar) }}" style="height: 10em" alt="Gambar Kegiatan"></a>
+                                            <a href="{{ asset($kegiatan->image->first()->gambar) }}" class="image-popup-no-margins"><img src="{{ asset($kegiatan->image->first()->gambar) }}" style="height: 10em" alt="Gambar Kegiatan"></a>
                                         </td>
                                         <td>{{ $kegiatan->tempat_kegiatan }}</td>
                                         <td>{!! Str::of($kegiatan->deskripsi_kegiatan)->limit(100) !!}</td>

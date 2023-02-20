@@ -46,7 +46,7 @@
                                     <tr>
                                         <td>{{ $i++ }}</td>
                                         <td>
-                                            <a href="{{ asset('storage/' . $gambar->gambar) }}" class="image-popup-no-margins"><img src="{{ asset('storage/' . $gambar->gambar) }}" style="height: 10em" alt="Gambar wisata"></a>
+                                            <a href="{{ asset($gambar->gambar) }}" class="image-popup-no-margins"><img src="{{ asset($gambar->gambar) }}" style="height: 10em" alt="Gambar wisata"></a>
                                         </td>
                                         <td>
                                             <a href="{{ route('admin.gambar.edit', $gambar->id) }}" class="btn btn-info sm" title="Edit Data"><i class="fas fa-edit"></i></a>

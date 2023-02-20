@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\PaymentMethod;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Images;
 
 class PaymentMethodController extends Controller
 {
@@ -26,8 +27,11 @@ class PaymentMethodController extends Controller
             'payment_rekening' => 'required'
         ]);
 
-        $image = $request->file('payment_method')->store('image/payment');
-        $validated['payment_method'] = $image;
+        $image = $request->file('payment_method');
+        $name_gen = time() . hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+        $save_url = 'image/' . $name_gen;
+        Images::make($image)->save($save_url);
+        $validated['payment_method'] = $save_url;
 
         PaymentMethod::create($validated);
 
@@ -52,8 +56,11 @@ class PaymentMethodController extends Controller
 
         if ($request->payment_method) {
             Storage::delete($payment_method->payment_method);
-            $image = $request->file('payment_method')->store('image/payment');
-            $validated['payment_method'] = $image;
+            $image = $request->file('payment_method');
+            $name_gen = time() . hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+            $save_url = 'image/' . $name_gen;
+            Images::make($image)->save($save_url);
+            $validated['payment_method'] = $save_url;
         } else {
             $validated['payment_method'] = $payment_method->payment_method;
         }

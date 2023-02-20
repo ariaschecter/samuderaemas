@@ -8,6 +8,7 @@ use App\Models\Usaha;
 use App\Models\Wisata;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Images;
 
 class ImageController extends Controller
 {
@@ -29,14 +30,11 @@ class ImageController extends Controller
         ]);
 
         $validated = $request->except('_token');
-        if ($request->kegiatan_id) {
-            $image = $request->file('gambar')->store('image/kegiatan');
-        } else if ($request->wisata_id){
-            $image = $request->file('gambar')->store('image/wisata');
-        } else if ($request->usaha_id){
-            $image = $request->file('gambar')->store('image/usaha');
-        }
-        $validated['gambar'] = $image;
+        $image = $request->file('gambar');
+        $name_gen = time() . hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+        $save_url = 'image/' . $name_gen;
+        Images::make($image)->save($save_url);
+        $validated['gambar'] = $save_url;
 
         Image::create($validated);
 

@@ -50,7 +50,7 @@
                                         <td>{{ $i++ }}</td>
                                         <td>{{ $wisata->judul_wisata }}</td>
                                         <td>
-                                            <a href="{{ asset('storage/' . $wisata->image->first()->gambar) }}" class="image-popup-no-margins"><img src="{{ asset('storage/' . $wisata->image->first()->gambar) }}" style="height: 10em" alt="Gambar Wisata"></a>
+                                            <a href="{{ asset($wisata->image->first()->gambar) }}" class="image-popup-no-margins"><img src="{{ asset($wisata->image->first()->gambar) }}" style="height: 10em" alt="Gambar Wisata"></a>
                                         </td>
                                         <td>{!! Str::of($wisata->deskripsi_wisata)->limit(30) !!}</td>
                                         <td>{{ Str::of($wisata->lokasi_wisata)->limit(30) }}</td>

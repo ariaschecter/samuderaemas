@@ -42,7 +42,7 @@
             </div>
             <div class="view-activity">
                 @foreach ($kegiatan->image->take(9) as $image)
-                    <img src="{{ asset('storage/' . $image->gambar) }}" alt="detail-activity">
+                    <img src="{{ asset($image->gambar) }}" alt="detail-activity">
                 @endforeach
             </div>
             <div class="about-activity">
